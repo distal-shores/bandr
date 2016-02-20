@@ -1,0 +1,17 @@
+<%= form_for(@interest_type) do |f| %>
+  <% if @interest_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@interest_type.errors.count, "error") %> prohibited this interest_type from being saved:</h2>
+
+      <ul>
+      <% @interest_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,17 @@
+<%= form_for(@band_user) do |f| %>
+  <% if @band_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@band_user.errors.count, "error") %> prohibited this band_user from being saved:</h2>
+
+      <ul>
+      <% @band_user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
