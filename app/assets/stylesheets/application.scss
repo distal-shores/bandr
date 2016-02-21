@@ -13,3 +13,49 @@
  *= require_tree .
  *= require_self
  */
+ 
+@import 'bulma';
+
+$bg:#55505C;
+$gmblue:#5D737E;
+$mint:#CDF9CB;
+$neutcent:#6CBD92;
+$popcent:#F4FF18;
+
+html {
+  background-color:$bg;
+}
+
+body {
+  background-color:$bg;
+}
+
+.navbar {
+  background-color:$gmblue;
+}
+
+%cube {
+  background:$gmblue;
+  width: 80px;
+  height: 80px;
+  position:absolute;
+  color:#fff;
+  text-align: center;
+  line-height: 80px;
+  transition:transform ease-out 400ms;
+}
+
+.hamburger{
+  $width:25px;
+  $height:3px;
+  width:$width;
+  height:$height;
+  background:white;
+  display:block;
+  position:absolute;
+  top:10%;
+  right:5%;
+  margin-left:-$width/2;
+  margin-top:-$height/2;
+  transition:transform 200ms;
+}
