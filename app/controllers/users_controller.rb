@@ -26,24 +26,9 @@ class UsersController < ApplicationController
 
   end
 
-  def update
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
-      else
-        format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   def destroy
     @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to users_url, notice: 'User was successfully destroyed.'
   end
 
   private
@@ -53,8 +38,9 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:username, :first_name, :last_name, :birthdate, :email, :phone_number, :profile_pic_url, :admin, :password, :password_confirmation, :provider, :uid, :name, :oauth_token, :oauth_expires_at)
+      params.require(:user).permit(:admin, :provider, :uid, :name, :oauth_token, :oauth_expires_at)
     end
+    
 end
 
 
