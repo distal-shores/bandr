@@ -17,6 +17,6 @@
 
 $(function () {
   $('.sidebar-btn').on('click', function() {
-    $(this).closest('#sidebar-bg').toggleClass('sidebar-bg-expand', 1000, 'easeOutSine').toggleClass('sidebar-bg-collapse', 1000, 'easeOutSine');
+    $(this).closest('#sidebar-bg').toggleClass('sidebar-bg-expand').toggleClass('sidebar-bg-collapse');
   });
 });
