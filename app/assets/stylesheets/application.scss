@@ -68,24 +68,17 @@ body {
   background:$popcent;
 }
 
-$hamburger-spacing:8px;
 .hamburger-1{
-  transform:translate3d(0,-$hamburger-spacing,0);
+  transform:translate3d(2px,-7px,0) scale(0.01,0.01);
 }
 .hamburger-2{
-  transform:translate3d(0,0,0);
-}
-.hamburger-3{
-  transform:translate3d(0,$hamburger-spacing,0);
+  transform:translate3d(-5px,-8px,0)scale(0.01,0.01);
 }
 .sidebar-btn:checked+.sidebar-btn-open {
   .hamburger-1 {
     transform:translate3d(0,0,0) rotate(45deg); 
   }
   .hamburger-2 {
-    transform:translate3d(0,0,0) scale(0.1,1);
-  }
-  .hamburger-3 {
     transform:translate3d(0,0,0) rotate(-45deg); 
   }
 }
@@ -141,4 +134,21 @@ $hamburger-spacing:8px;
   height:90vh;
   background:$gmblue;
   transition:all 1s ease-out;
+}
+
+#message-button {
+  color:$popcent;
+  display:block;
+  position:absolute;
+  top:50%;
+  right:25%;
+  margin-left:-$width/2;
+  margin-top:-$height/2;
+  transition:transform 1s;
+}
+
+.sidebar-btn:checked+.sidebar-btn-open {
+  #message-button {
+    transform:translate3d(0,0,0) rotate(45deg) scale(0.1,0.1); 
+  }
 }
