@@ -11,13 +11,17 @@ Rails.application.routes.draw do
   resources :demo_links
   resources :demos
   resources :messages
-  resources :connections
   resources :interest_types
   resources :interests
   resources :interest_users
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
   resource :home, only: [:show]
+
+  resources :connections, :controller => 'connections', except: [:show, :edit] do
+    get "requests", on: :collection
+    get "invites", on: :collection
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

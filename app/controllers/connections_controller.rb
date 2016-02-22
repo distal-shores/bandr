@@ -1,74 +1,48 @@
 class ConnectionsController < ApplicationController
-  before_action :set_connection, only: [:show, :edit, :update, :destroy]
 
-  # GET /connections
-  # GET /connections.json
+  before_filter :authenticate_user!
+
   def index
-    @connections = Connection.all
+    @connections = current_user.connections
   end
 
-  # GET /connections/1
-  # GET /connections/1.json
-  def show
-  end
-
-  # GET /connections/new
   def new
-    @connection = Connection.new
+    @users = User.all conditions: ["id != ?", current_user.id]
   end
 
-  # GET /connections/1/edit
-  def edit
-  end
-
-  # POST /connections
-  # POST /connections.json
   def create
-    @connection = Connection.new(connection_params)
-
-    respond_to do |format|
-      if @connection.save
-        format.html { redirect_to @connection, notice: 'Connection was successfully created.' }
-        format.json { render :show, status: :created, location: @connection }
-      else
-        format.html { render :new }
-        format.json { render json: @connection.errors, status: :unprocessable_entity }
-      end
+    invitee = User.find_by_id(params[:user_id])
+    if current_user.invite invitee
+      redirect_to new_friend_path, notice: "Connection request sent!"
+    else
+      redirect_to new_friend_path, notice: "Sorry! Could not send connection request!"
     end
   end
 
-  # PATCH/PUT /connections/1
-  # PATCH/PUT /connections/1.json
   def update
-    respond_to do |format|
-      if @connection.update(connection_params)
-        format.html { redirect_to @connection, notice: 'Connection was successfully updated.' }
-        format.json { render :show, status: :ok, location: @connection }
-      else
-        format.html { render :edit }
-        format.json { render json: @connection.errors, status: :unprocessable_entity }
-      end
+    inviter = User.find_by_id(params[:id])
+    if current_user.approve inviter
+      redirect_to new_connection_path, notice: "Connection confirmed!"
+    else
+      redirect_to new_connection_path, notice: "Sorry! Could not connect!"
     end
   end
 
-  # DELETE /connections/1
-  # DELETE /connections/1.json
+  def requests
+    @pending_requests = current_user.pending_invited_by
+  end
+
+  def invites
+    @pending_invites = current_user.pending_invited
+  end
+
   def destroy
-    @connection.destroy
-    respond_to do |format|
-      format.html { redirect_to connections_url, notice: 'Connection was successfully destroyed.' }
-      format.json { head :no_content }
+    user = User.find_by_id(params[:id])
+    if current_user.remove_connection user
+      redirect_to connecitons_path, notice: "Successfully removed connection!"
+    else
+      redirect_to connections_path, notice: "Sorry, couldn't remove connection!"
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_connection
-      @connection = Connection.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def connection_params
-      params.fetch(:connection, {})
-    end
 end
