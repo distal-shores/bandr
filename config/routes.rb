@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :connections
   get 'sessions/new'
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
@@ -11,13 +12,14 @@ Rails.application.routes.draw do
   resources :demo_links
   resources :demos
   resources :messages
-  resources :connections
   resources :interest_types
   resources :interests
   resources :interest_users
   resources :users, only: [:new, :create, :show]
   resources :sessions, only: [:new, :create, :destroy]
   resource :home, only: [:show]
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
