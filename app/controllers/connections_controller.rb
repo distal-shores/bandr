@@ -1,67 +1,35 @@
 class ConnectionsController < ApplicationController
-
-  before_filter :authenticate_user!
-
-  def index
-    @connections = current_user.connections
-  end
-
-  def new
-    @users = User.all conditions: ["id != ?", current_user.id]
-    %ul
-  - for user in @friends
-    %li
-      - if current_user.friend_with? user
-        = user.email
-        |
-        You are already friends!
-      - elsif current_user.invited? user
-        = user.email
-        |
-        Pending request ...
-      - elsif user.invited? current_user
-        = user.email
-        |
-        = link_to "Confirm friend?", friend_path(user), :method => "put"
-      - else
-        = user.email
-        |
-        = link_to "Add friend?", friends_path(:user_id => user), :method => "post"
-  end
-
+  # POST /friendships
+  # POST /friendships.json
   def create
-    invitee = User.find_by_id(params[:user_id])
-    if current_user.invite invitee
-      redirect_to new_friend_path, notice: "Connection request sent."
+    @friendship = current_user.friendships.build(:friend_id => params[:friend_id], approved: "false")
+    if @friendship.save
+      flash[:notice] = "Friend requested."
+      redirect_to :back
     else
-      redirect_to new_friend_path, notice: "Sorry, could not send connection request."
+      flash[:error] = "Unable to request friendship."
+      redirect_to :back
     end
   end
 
+  # PATCH/PUT /friendships/1
+  # PATCH/PUT /friendships/1.json
   def update
-    inviter = User.find_by_id(params[:id])
-    if current_user.approve inviter
-      redirect_to new_connection_path, notice: "Connection confirmed."
+  @friendship = Friendship.where(friend_id: current_user, user_id: params[:id]).first
+  @friendship.update(approved: true)
+    if @friendship.save
+      redirect_to root_url, :notice => "Successfully confirmed friend!"
     else
-      redirect_to new_connection_path, notice: "Sorry, could not connect."
+      redirect_to root_url, :notice => "Sorry! Could not confirm friend!"
     end
   end
 
-  def requests
-    @pending_requests = current_user.pending_invited_by
-  end
-
-  def invites
-    @pending_invites = current_user.pending_invited
-  end
-
+  # DELETE /friendships/1
+  # DELETE /friendships/1.json
   def destroy
-    user = User.find_by_id(params[:id])
-    if current_user.remove_connection user
-      redirect_to connecitons_path, notice: "Successfully removed connection."
-    else
-      redirect_to connections_path, notice: "Sorry, couldn't remove connection."
-    end
+    @friendship = Friendship.where(friend_id: [current_user, params[:id]]).where(user_id: [current_user, params[:id]]).last
+    @friendship.destroy
+    flash[:notice] = "Removed friendship."
+    redirect_to :back
   end
-
 end
