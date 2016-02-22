@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
-
+  include Amistad::FriendModel
   has_secure_password
+
 
   validates :password, length: { minimum: 6 }
   validates :first_name, presence: true
@@ -16,6 +17,9 @@ class User < ActiveRecord::Base
   #     user.save
   #   end
   # end
+
+
+
 
 
 end
