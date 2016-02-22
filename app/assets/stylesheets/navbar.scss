@@ -5,13 +5,18 @@ $neutcent:#6CBD92;
 $popcent:#F4FF18;
 
 h1.logo a {
-  margin-left: 1vw;
-  font-size: 4em;
+  margin-left:10px;
+  font-size:4em;
   color: $popcent;
-  font-family: Damion;
+  font-family:Damion;
 }
 
 .navbar {
   background-color:$gmblue;
-  min-height: 79px;
+  min-height:79px;
+
+  .navbar-right {
+    color: $popcent;
+    margin-right: 15px;
+  }
 }

@@ -19,7 +19,6 @@
           <%= render 'layouts/sidebar' %>
           <%= yield %>
         <% else %>
-          <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
           <%= render 'layouts/landingpage' %>
         <% end %>
       </div>
