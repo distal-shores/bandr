@@ -6,12 +6,7 @@
   </div>
   <div class='navbar-right'>
     <div class='navbar-item'>
-      <% if !current_user %>
-        <%= link_to "Log In", new_session_path %> | <%= link_to "Sign Up", new_user_path %>
-      <% else %>
-        <h2><%= current_user.first_name %><br/></h2>
-        <%= link_to "Log Out", session_path("current"), method: :delete %>
-      <% end %>
+      <h2>Signup | Login</h2>
     </div>
   </div>
 </nav>
