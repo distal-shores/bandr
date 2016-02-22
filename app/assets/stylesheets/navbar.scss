@@ -6,8 +6,9 @@ $popcent:#F4FF18;
 
 h1.logo a {
   margin-left:10px;
+  color:$popcent;
   font-size:4em;
-  color: $popcent;
+  text-shadow:3px 3px 5px $bg;
   font-family:Damion;
 }
 
@@ -16,7 +17,25 @@ h1.logo a {
   min-height:79px;
 
   .navbar-right {
-    color: $popcent;
-    margin-right: 15px;
+    color:$popcent;
+    margin-right:15px;
+    font-size:1.5em;
+    text-shadow:3px 3px 5px $bg;
+
+    h2 {
+      font-family:Lato;
+      font-weight:700;
+      margin-right:-20px;
+    }
+
+    a {
+      color:$mint;
+      font-family:Lato;
+      font-weight:700;
+    }
+
+    a:hover {
+      color:$popcent;
+    }
   }
 }
