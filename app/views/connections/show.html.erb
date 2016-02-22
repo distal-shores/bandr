@@ -2,7 +2,7 @@
 <ul>
   <% for connection in @user.connections %>
     <li>
-      <%=h connections.connection.first_name %>
+      <%= connections.connection.first_name %>
       (<%= link_to "remove", connection, :method => :delete %>)
     </li>
   <% end %>
@@ -10,9 +10,9 @@
 
 <p><%= link_to "Find Connections", users_path %></p>
 
-<h2>Friended by Users</h2>
+<h2>Connected by Users</h2>
 <ul>
-  <% for user in @user.inverse_friends %>
+  <% for user in @user.inverse_connections %>
     <li><%=h user.first_name %></li>
   <% end %>
 </ul>
