@@ -6,7 +6,12 @@
   </div>
   <div class='navbar-right'>
     <div class='navbar-item'>
-      <h2>Signup | Login</h2>
+    <% if current_user %>
+      Signed in as <strong><%= current_user.first_name %></strong>!
+      <%= link_to "Sign out", signout_path, id: "sign_out" %>
+    <% else %>
+      <h2><%= link_to "Signup", new_user_path %> | <%= link_to "Login", new_session_path %></h2>
+    <% end %>
     </div>
   </div>
 </nav>
