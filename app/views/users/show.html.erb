@@ -1,49 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+<h2>Connections</h2>
+<ul>
+  <% for connection in @user.connections %>
+    <li>
+      <%=h connection.friend.first_name %>
+      (<%= link_to "remove", connection, :method => :delete %>)
+    </li>
+  <% end %>
+</ul>
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
+<p><%= link_to "Find Connections", users_path %></p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
+<h2>Connected Started by Users</h2>
+<ul>
+  <% for user in @user.inverse_friends %>
+    <li><%=h user.first_name %></li>
+  <% end %>
+</ul>
 
-<p>
-  <strong>Birthdate:</strong>
-  <%= @user.birthdate %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Phone number:</strong>
-  <%= @user.phone_number %>
-</p>
-
-<p>
-  <strong>Password digest:</strong>
-  <%= @user.password_digest %>
-</p>
-
-<p>
-  <strong>Profile pic url:</strong>
-  <%= @user.profile_pic_url %>
-</p>
-
-<p>
-  <strong>Admin:</strong>
-  <%= @user.admin %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

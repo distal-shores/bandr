@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :interest_types
   resources :interests
   resources :interest_users
-  resources :users, only: [:new, :create]
+  resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resource :home, only: [:show]
 
