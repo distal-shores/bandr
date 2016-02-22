@@ -6,12 +6,12 @@
   </div>
   <div class='navbar-right'>
     <div class='navbar-item'>
-      <% if !current_user %>
-        <%= link_to "Log In", new_session_path %> | <%= link_to "Sign Up", new_user_path %>
-      <% else %>
-        <h2><%= current_user.first_name %><br/></h2>
-        <%= link_to "Log Out", session_path("current"), method: :delete %>
-      <% end %>
+    <% if current_user %>
+      Signed in as <strong><%= current_user.first_name %></strong>!
+      <%= link_to "Sign out", signout_path, id: "sign_out" %>
+    <% else %>
+      <h2><%= link_to "Signup", new_user_path %> | <%= link_to "Login", new_session_path %></h2>
+    <% end %>
     </div>
   </div>
 </nav>
