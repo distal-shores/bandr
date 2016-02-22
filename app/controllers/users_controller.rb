@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   def new
@@ -21,7 +22,7 @@ class UsersController < ApplicationController
     
     if @user.save
       session[:user_id] = @user.id
-      redirect_to bands_path, notice: "Welcome aboard, #{@user.username}!"
+      redirect_to bands_path, notice: "Welcome aboard, #{@user.first_name}!"
     end
 
   end
