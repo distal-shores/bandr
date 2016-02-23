@@ -1,5 +1,6 @@
 class DemoLinksController < ApplicationController
   before_action :set_demo_link, only: [:show, :edit, :update, :destroy]
+  before_filter :restrict_access
 
   # GET /demo_links
   # GET /demo_links.json

@@ -1,5 +1,6 @@
 class InterestTypesController < ApplicationController
   before_action :set_interest_type, only: [:show, :edit, :update, :destroy]
+  before_filter :restrict_access
 
   # GET /interest_types
   # GET /interest_types.json

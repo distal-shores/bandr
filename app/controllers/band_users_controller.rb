@@ -1,5 +1,6 @@
 class BandUsersController < ApplicationController
   before_action :set_band_user, only: [:show, :edit, :update, :destroy]
+  before_filter :restrict_access
 
   # GET /band_users
   # GET /band_users.json

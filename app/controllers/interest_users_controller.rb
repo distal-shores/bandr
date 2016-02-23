@@ -1,5 +1,6 @@
 class InterestUsersController < ApplicationController
   before_action :set_interest_user, only: [:show, :edit, :update, :destroy]
+  before_filter :restrict_access
 
   # GET /interest_users
   # GET /interest_users.json

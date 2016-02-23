@@ -1,5 +1,6 @@
 class DemosController < ApplicationController
   before_action :set_demo, only: [:show, :edit, :update, :destroy]
+  before_filter :restrict_access
 
   # GET /demos
   # GET /demos.json

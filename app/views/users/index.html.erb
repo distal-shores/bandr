@@ -1,17 +1,19 @@
 <p id="notice"><%= notice %></p>
-
 <h1>User List</h1>
-
 <div id="users">
-<% for user in @users %>
-  <div class="user">
-    <p>
-      <strong><%= user.first_name %></strong>
-      <% @connection = Connection.where('user_id = ? AND friend_id = ?' current_user.id, user.id) %>
-      <%= @connection %>
-      <%= link_to "Add Friend", connections_path(:friend_id => user), :method => :post %>
-      <div class="clear"></div>
-    </p>
-  </div>
-<% end %>
+  <% for user in @users %>
+    <div class="user">
+      <p>
+        <strong><%= user.first_name %></strong>
+        <% @connection = Connection.where('user_id = ? AND friend_id = ?', current_user.id, user.id) %>
+        <% if @connection.count == 0 %>
+          <%= link_to "Add Friend", connections_path(:friend_id => user), :method => :post %> 
+        <% end %>
+        <% @accept = Connection.where('friend_id = ? AND user_id = ? AND status = ?', current_user.id, user.id, 'pending') %>
+        <% if @accept.count == 1 %>
+          <%= link_to "Accept", connection_path(@accept.first), :method => :patch %>
+        <% end %>
+      </p>
+    </div>
+  <% end %>
 </div>
