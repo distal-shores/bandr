@@ -12,6 +12,13 @@ class User < ActiveRecord::Base
   has_many :inverse_connections, class_name: "Connection", foreign_key: "friend_id"
   has_many :inverse_friends, through: :inverse_connections, source: :user
 
+  has_many :received_messages,
+    class_name: 'Message',
+    primary_key: 'user_id',
+    foreign_key: 'recipient_id',
+    order: "messages.created_at DESC",
+    conditions: ["messages.recipient_deleted = ?", false]
+
   # def self.from_omniauth(auth)
   #   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
   #     user.provider = auth.provider 
@@ -20,6 +27,15 @@ class User < ActiveRecord::Base
   #     user.save
   #   end
   # end
+
+  def unread_messages?
+    unread_messages_count > 0 ? true : false
+  end
+
+  #Returns the number of unread messages for this user
+  def unread_messages_count
+    eval 'messages.count(:conditions => ["recipient_id = ? AND read_at IS NULL", self.user_id)'
+  end
 
 
 end

@@ -15,6 +15,11 @@ class MessagesController < ApplicationController
   # GET /messages/new
   def new
     @message = Message.new
+    if params[:reply_to]
+      @reply_to = User.find_by_user_id(params[:reply_to])
+    unless @reply_to.nil?
+      @message.recipient_id = @reply_to.user_id
+    end
   end
 
   # GET /messages/1/edit
@@ -24,16 +29,13 @@ class MessagesController < ApplicationController
   # POST /messages
   # POST /messages.json
   def create
-    @message = Message.new(message_params)
-
-    respond_to do |format|
-      if @message.save
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
-        format.json { render :show, status: :created, location: @message }
-      else
-        format.html { render :new }
-        format.json { render json: @message.errors, status: :unprocessable_entity }
-      end
+    @message = Message.new(params[:message])
+    @message.sender_id = @user.id
+    if @message.save
+      flash[:notice] = "Message has been sent"
+      redirect_to user_messages_path(current_user, mailbox: :inbox)
+    else
+      render action: :new
     end
   end
 
