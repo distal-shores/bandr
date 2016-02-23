@@ -7,6 +7,8 @@
   <div class="user">
     <p>
       <strong><%= user.first_name %></strong>
+      <% @connection = Connection.where('user_id = ? AND friend_id = ?' current_user.id, user.id) %>
+      <%= @connection %>
       <%= link_to "Add Friend", connections_path(:friend_id => user), :method => :post %>
       <div class="clear"></div>
     </p>
