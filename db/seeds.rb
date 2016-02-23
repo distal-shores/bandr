@@ -1,7 +1,9 @@
-20.times do User.create([{ 
+20.times do
+ user = User.create( 
  email: Faker::Internet.email, 
  first_name: Faker::Name.first_name, 
  last_name: Faker::Name.last_name, 
- password_digest: Faker::Internet.password(6), 
- admin: false }]) 
+ password: Faker::Internet.password(6), 
+ admin: false
+ )
 end
