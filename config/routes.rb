@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :band_users
   resources :demo_links
   resources :demos
-  resources :messages
+  resources :messages, only: [:new, :create, :show]
   resources :connections
   resources :interest_types
   resources :interests

@@ -15,9 +15,7 @@ class User < ActiveRecord::Base
   has_many :received_messages,
     class_name: 'Message',
     primary_key: 'user_id',
-    foreign_key: 'recipient_id',
-    order: "messages.created_at DESC",
-    conditions: ["messages.recipient_deleted = ?", false]
+    foreign_key: 'recipient_id'
 
   # def self.from_omniauth(auth)
   #   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -29,7 +27,7 @@ class User < ActiveRecord::Base
   # end
 
   def unread_messages?
-    unread_messages_count > 0 ? true : false
+    (unread_messages_count > 0) ? true : false
   end
 
   #Returns the number of unread messages for this user
