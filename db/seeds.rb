@@ -4,4 +4,3 @@
  lastname: Faker::Name.last_name, 
  password_digest: Faker::Internet.password(6), 
  admin: false }]) 
-end
