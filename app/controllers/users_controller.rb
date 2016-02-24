@@ -26,9 +26,9 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       redirect_to bands_path, notice: "Welcome aboard, #{@user.first_name}!"
-    #Grabbing postal code from signup form
+    end
     
-
+    #Grabbing postal code from signup form
     if @user.postalcode?
       @geocoder = Geocoder.search "#{user_params[:postalcode]}"
       #storing the 'city' element (json via geocoder via google api) from the first array element
