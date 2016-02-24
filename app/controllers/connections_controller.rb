@@ -1,4 +1,4 @@
-  before_action :set_connection, only: [:show, :edit, :update, :destroy]
+class ConnectionsController < ApplicationController
 
   def create
     # if no existing connection
@@ -20,7 +20,7 @@
     if flag == true
       redirect_to users_path
     else
-      flash[:notice] = 'Unable to accept request.'
+      flash[:notice] = 'Fuck you.'
       redirect_to users_path
     end
   end
