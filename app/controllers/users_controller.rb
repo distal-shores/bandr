@@ -23,26 +23,19 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     
-    if @user.save
-      session[:user_id] = @user.id
-      redirect_to bands_path, notice: "Welcome aboard, #{@user.first_name}!"
-    end
-    
     #Grabbing postal code from signup form
     if @user.postalcode?
       @geocoder = Geocoder.search "#{user_params[:postalcode]}"
       #storing the 'city' element (json via geocoder via google api) from the first array element
       if !@geocoder.empty?
-        user_city=@geocoder[0].city
-        user_province=@geocoder[0].province
+        @user.city = @geocoder[0].city
+        @user.province = @geocoder[0].province
       end
     end
-    
+
     if @user.save
       session[:user_id] = @user.id
-      @user.update(city: user_city, province: user_province)
-      @user.reload
-      redirect_to @user, notice: "Welcome aboard, #{@user.first_name}!"
+      redirect_to @user, notice: "Welcome aboard, #{@user.first_name}"
     else
       render 'new'
     end
