@@ -2,9 +2,25 @@
 <h1>User List</h1>
 <div id="users">
   <% for user in @users %>
-    <div class="user">
-      <p>
-        <strong><%= user.first_name %></strong>
+    <% if user != current_user %>
+      <div class="user">
+        <p>
+          <strong><%= user.first_name %></strong>
+          <% @user = show_non_friends(user) %>
+          <% if @user.count == 0 %>
+            <%= link_to "Add Friend", connections_path(:friend_id => user), :method => :post %> 
+          <% end %>
+          <% @pending_request = show_pending_friends(user) %>
+          <% if @pending_request.count == 1 %>
+            <%= link_to "Accept", connection_path(@pending_request.first.id), :method => :patch %>
+          <% end %>
+        </p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+        <!-- <strong><%= user.first_name %></strong>
         <% @connection = Connection.where('user_id = ? AND friend_id = ?', current_user.id, user.id) %>
         <% if @connection.count == 0 %>
           <%= link_to "Add Friend", connections_path(:friend_id => user), :method => :post %> 
@@ -12,8 +28,4 @@
         <% @accept = Connection.where('friend_id = ? AND user_id = ? AND status = ?', current_user.id, user.id, 'pending') %>
         <% if @accept.count == 1 %>
           <%= link_to "Accept", connection_path(@accept.first), :method => :patch %>
-        <% end %>
-      </p>
-    </div>
-  <% end %>
-</div>
+        <% end %> -->
