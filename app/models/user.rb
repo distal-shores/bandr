@@ -26,6 +26,10 @@ class User < ActiveRecord::Base
   #   end
   # end
 
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
   def unread_messages?
     (unread_messages_count > 0) ? true : false
   end

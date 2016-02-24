@@ -3,16 +3,12 @@ class MessagesController < ApplicationController
  before_filter :restrict_access
 
   def index
-    @messages = Message.all
-    if params[:mailbox] == "sent"
-      @messages = current_user.sent_messages
-    elsif params[:mailbox] == "inbox"
-      @messages = current_user.received_messages
-    end
+    @messages = Message.all.where('recipient_id = ?', current_user.id.to_s)
   end
 
   def show
-    @message = Message.readingmessage(params[:id], current_user.id)
+    @message = Message.find(params[:id])
+
   end
 
   def new
@@ -50,7 +46,7 @@ class MessagesController < ApplicationController
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def message_params
-      params.require(:message).permit(:body, :subject)
+      params.require(:message).permit(:body, :subject, :recipient_id)
     end
 
 end

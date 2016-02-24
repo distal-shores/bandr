@@ -10,6 +10,9 @@
       </ul>
     </div>
   <% end %>
+  <div class="select">
+    <%= collection_select(:message, :recipient_id, User.all, :id, :full_name) %>
+  </div>
   <div class="field">
     <%= f.label :subject %><br>
     <%= f.text_area :subject %>
