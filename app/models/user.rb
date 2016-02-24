@@ -2,13 +2,13 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-  has_many :connections
-  has_many :passive_connections, :class_name => "Connection", :foreign_key => "connection_id"
+  # has_many :connections
+  # has_many :passive_connections, :class_name => "Connection", :foreign_key => "connection_id"
 
-  has_many :active_connections, -> { where(connections: { approved: true}) }, :through => :connections, :source => :connection
-  has_many :passive_connections, -> { where(connections: { approved: true}) }, :through => :passive_connections, :source => :user
-  has_many :pending_connections, -> { where(connections: { approved: false}) }, :through => :connections, :source => :connection
-  has_many :requested_connections, -> { where(connections: { approved: false}) }, :through => :passive_connections, :source => :user
+  # has_many :active_connections, -> { where(connections: { approved: true}) }, :through => :connections, :source => :connection
+  # has_many :passive_connections, -> { where(connections: { approved: true}) }, :through => :passive_connections, :source => :user
+  # has_many :pending_connections, -> { where(connections: { approved: false}) }, :through => :connections, :source => :connection
+  # has_many :requested_connections, -> { where(connections: { approved: false}) }, :through => :passive_connections, :source => :user
   # belongs_to :location
 
   validates :password, length: { minimum: 6 }
@@ -48,8 +48,8 @@ class User < ActiveRecord::Base
     eval 'messages.count(:conditions => ["recipient_id = ? AND read_at IS NULL", self.user_id)'
   end
 
-  def connections
-    active_connections | passive_connections
-  end
+  # def connections
+  #   active_connections | passive_connections
+  # end
 
 end
