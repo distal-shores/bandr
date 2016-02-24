@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  #retreiving users location information
   def new
     @user = User.new
   end
@@ -19,6 +20,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+
+    if params[:search].present?
+      location = Geocoder.search(params[:postalcode])
+    # 1, Search Location if it already exists by city (location.first.city)
+      # If found, then add to user: user.location = location
+      # If not found, then create a new Location(city: location.first.city, etc) then add to the user
+  
     if @user.save
       session[:user_id] = @user.id
       redirect_to @user, notice: "Welcome aboard, #{@user.first_name}!"

@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
     has_many :passive_connections, -> { where(connections: { approved: true}) }, :through => :passive_connections, :source => :user
     has_many :pending_connections, -> { where(connections: { approved: false}) }, :through => :connections, :source => :connection
     has_many :requested_connections, -> { where(connections: { approved: false}) }, :through => :passive_connections, :source => :user
+    belongs_to :location
 
 
     def connections
@@ -20,6 +21,7 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true
+  validates :location, presence: true
   
 
   # def self.from_omniauth(auth)
