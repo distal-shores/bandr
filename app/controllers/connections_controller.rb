@@ -1,14 +1,4 @@
-class ConnectionsController < ApplicationController
-  # def create
-  #   @connection = current_user.connections.build(:friend_id => params[:friend_id])
-  #   if @connection.save
-  #     flash[:notice] = "Added connection."
-  #     redirect_to root_url
-  #   else
-  #     flash[:error] = "Unable to add connection."
-  #     redirect_to root_url
-  #   end
-  # end
+  before_action :set_connection, only: [:show, :edit, :update, :destroy]
 
   def create
     # if no existing connection
@@ -30,7 +20,7 @@ class ConnectionsController < ApplicationController
     if flag == true
       redirect_to users_path
     else
-      flash[:notice] = 'Fuck you.'
+      flash[:notice] = 'Unable to accept request.'
       redirect_to users_path
     end
   end

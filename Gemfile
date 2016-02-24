@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'faker'
-
 gem 'bulma'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
@@ -40,6 +39,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'pry'
+  gem 'faker'
 end
 
 group :development do

@@ -18,7 +18,7 @@ class ConnectionsControllerTest < ActionController::TestCase
 
   test "should create connection" do
     assert_difference('Connection.count') do
-      post :create, connection: {  }
+      post :create, connection: { approved: @connection.approved, connection_id: @connection.connection_id, user_id: @connection.user_id }
     end
 
     assert_redirected_to connection_path(assigns(:connection))
@@ -35,7 +35,7 @@ class ConnectionsControllerTest < ActionController::TestCase
   end
 
   test "should update connection" do
-    patch :update, id: @connection, connection: {  }
+    patch :update, id: @connection, connection: { approved: @connection.approved, connection_id: @connection.connection_id, user_id: @connection.user_id }
     assert_redirected_to connection_path(assigns(:connection))
   end
 

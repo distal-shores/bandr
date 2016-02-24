@@ -1,6 +1,20 @@
 class User < ActiveRecord::Base
 
   has_secure_password
+    has_many :connections
+    has_many :passive_connections, :class_name => "Connection", :foreign_key => "connection_id"
+
+    has_many :active_friends, -> { where(connections: { approved: true}) }, :through => :connections, :source => :friend
+    has_many :passive_friends, -> { where(connections: { approved: true}) }, :through => :passive_connections, :source => :user
+    has_many :pending_friends, -> { where(connections: { approved: false}) }, :through => :connections, :source => :friend
+    has_many :requested_connections, -> { where(connections: { approved: false}) }, :through => :passive_connections, :source => :user
+
+
+    def connections
+      active_connections | passive_connections
+    end
+
+
 
   validates :password, length: { minimum: 6 }
   validates :first_name, presence: true
@@ -34,6 +48,9 @@ class User < ActiveRecord::Base
   def unread_messages_count
     eval 'messages.count(:conditions => ["recipient_id = ? AND read_at IS NULL", self.user_id)'
   end
+
+
+
 
 
 end
