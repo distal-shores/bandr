@@ -22,7 +22,8 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
   validates :email, presence: true
   validates :postalcode, presence: true
-  validates :postalcode, length: { maximum: 7 }
+  validates_format_of :postalcode, with: /\A([ABCEGHJKLMNPRSTVXY]{1}\d{1}[A-Z]{1} *\d{1}[A-Z]{1}\d{1})\Z/i, on: :create
+  
   
 
   # def self.from_omniauth(auth)
