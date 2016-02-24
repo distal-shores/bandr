@@ -11,7 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160223200558) do
+
+ActiveRecord::Schema.define(version: 20160224033148) do
+>>>>>>> userdata
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,11 +34,19 @@ ActiveRecord::Schema.define(version: 20160223200558) do
   end
 
   create_table "connections", force: :cascade do |t|
+<<<<<<< HEAD
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.integer  "friend_id"
     t.string   "status"
+=======
+    t.integer  "user_id"
+    t.integer  "connection_id"
+    t.boolean  "approved"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+>>>>>>> userdata
   end
 
   create_table "demo_links", force: :cascade do |t|
@@ -94,6 +104,9 @@ ActiveRecord::Schema.define(version: 20160223200558) do
     t.string   "last_name"
     t.string   "email"
     t.string   "password_digest"
+    t.string   "postalcode"
+    t.string   "city"
+    t.string   "province"
   end
 
 end

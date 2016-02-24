@@ -1,19 +1,18 @@
-<p id="notice"><%= notice %></p>
+<h2>Connections</h2>
+<ul>
+  <% for connection in @user.connections %>
+    <li>
+      <%= connections.connection.first_name %>
+      (<%= link_to "remove", connection, :method => :delete %>)
+    </li>
+  <% end %>
+</ul>
 
-<p>
-  <strong>User:</strong>
-  <%= @connection.user_id %>
-</p>
+<p><%= link_to "Find Connections", users_path %></p>
 
-<p>
-  <strong>Connection:</strong>
-  <%= @connection.connection_id %>
-</p>
-
-<p>
-  <strong>Approved:</strong>
-  <%= @connection.approved %>
-</p>
-
-<%= link_to 'Edit', edit_connection_path(@connection) %> |
-<%= link_to 'Back', connections_path %>
+<h2>Connected by Users</h2>
+<ul>
+  <% for user in @user.inverse_connections %>
+    <li><%=h user.first_name %></li>
+  <% end %>
+</ul>

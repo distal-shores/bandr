@@ -8,7 +8,6 @@
   <% end %>
 </ul>
 
-<<<<<<< HEAD
 <p><%= link_to "Find Connections", users_path %></p>
 
 <h2>Friended by Users</h2>
@@ -18,13 +17,7 @@
   <% end %>
 </ul>
 
-<<<<<<< HEAD
-<% provide(:title, @user.name) %>
-<h1>
-  <%= gravatar_for @user %>
-  <%= @user.name %>
-</h1>
-=======
+
 <h2>Connections</h2>
 <ul>
   <% for connection in @user.connections %>
@@ -34,7 +27,7 @@
     </li>
   <% end %>
 </ul>
->>>>>>> master
+
 
 <p><%= link_to "Find Connections", users_path %></p>
 
@@ -46,4 +39,5 @@
 </ul>
 
 <%= link_to 'Back', users_path %>
+
 
