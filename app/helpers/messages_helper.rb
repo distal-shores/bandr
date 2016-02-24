@@ -7,7 +7,7 @@ module MessagesHelper
   end
   # Message is marked read if recipient has opened it
   def self.readingmessage(id, reader)
-    message = find(id, :conditions => ["sender_id = ? OR recipient_id = ?", reader, reader])
+    message = Message.find(id).where("sender_id = ? OR recipient_id = ?", reader, reader)
     if message.read_at.nil? && (message.recipient.user_id == reader)
       message.read_at = Time.now
       message.save!

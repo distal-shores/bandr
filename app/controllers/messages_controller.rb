@@ -3,6 +3,7 @@ class MessagesController < ApplicationController
  before_filter :restrict_access
 
   def index
+    @messages = Message.all
     if params[:mailbox] == "sent"
       @messages = current_user.sent_messages
     elsif params[:mailbox] == "inbox"
@@ -29,7 +30,7 @@ class MessagesController < ApplicationController
     @message.sender_id = current_user.id
     if @message.save
       flash[:notice] = "Message has been sent"
-      redirect_to root_path
+      redirect_to messages_path
     else 
       render action: :new
     end
