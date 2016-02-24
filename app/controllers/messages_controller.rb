@@ -32,16 +32,23 @@ class MessagesController < ApplicationController
     end
   end
 
-  def delete_multiple
-    if params[:delete]
-      params[:delete].each { |id|
-        @message = Message.find(id)
-        @message.mark_message_deleted(@message.id,current_user.id) unless @message.nil?
-      }
-      flash[:notice] = "Messages deleted"
-    end
-    redirect_to user_messages_path(current_user, @messages)
+  def destroy
+    @message = Message.find(params[:id])
+    @message.destroy
+    flash[:notice] = "Message deleted."
+    redirect_to messages_path
   end
+
+  # def delete_multiple
+  #   if params[:delete]
+  #     params[:delete].each { |id|
+  #       @message = Message.find(id)
+  #       @message.mark_message_deleted(@message.id,current_user.id) unless @message.nil?
+  #     }
+  #     flash[:notice] = "Messages deleted"
+  #   end
+  #   redirect_to user_messages_path(current_user, @messages)
+  # end
 
   private
     # Never trust parameters from the scary internet, only allow the white list through.
