@@ -22,32 +22,27 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @geocoder = Geocoder.search "#{user_params[:postalcode]}"
-    #     @geocoder = Geocoder.search "#{user_params[:postalcode]}"
-    city_temp=@geocoder[0].city
-    province_temps=@geocoder[0].province
+    #Grabbing postal code from signup form
+    
+
+    if @user.postalcode?
+      @geocoder = Geocoder.search "#{user_params[:postalcode]}"
+      #storing the 'city' element (json via geocoder via google api) from the first array element
+      if !@geocoder.empty?
+        user_city=@geocoder[0].city
+        user_province=@geocoder[0].province
+      end
+    end
     
     if @user.save
       session[:user_id] = @user.id
-      @user.update(:city=>city_temp, :province=>province_temps)
+      @user.update(city: user_city, province: user_province)
       @user.reload
       redirect_to @user, notice: "Welcome aboard, #{@user.first_name}!"
     else
       render 'new'
     end
-
-    # if params[:search].present?
-    #   print "hello"
-    #     print hash[:city]    
-    #     print "hello"
-    #   hash[:city] = Geocoder.search params[:postalcode]  
-
-    # # 1, Search Location if it already exists by city (location.first.city)
-    #   # If found, then add to user: user.location = location
-    #   # If not found, then create a new Location(city: location.first.city, etc) then add to the user
-    # end
-  
-  
+ 
   end
 
   def destroy
