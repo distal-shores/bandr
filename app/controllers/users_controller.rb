@@ -26,6 +26,7 @@ class UsersController < ApplicationController
     # 1, Search Location if it already exists by city (location.first.city)
       # If found, then add to user: user.location = location
       # If not found, then create a new Location(city: location.first.city, etc) then add to the user
+    end
   
     if @user.save
       session[:user_id] = @user.id
@@ -48,8 +49,8 @@ class UsersController < ApplicationController
       end
 
       def user_params
-        params.require(:user).permit(:admin, :first_name, :last_name, :email, :password, :password_confirmation
-                                    # oauth params :provider, :uid, :name, :oauth_token, :oauth_expires_at
+        hash = params.require(:user).permit(:admin, :first_name, :last_name, :email, :password, :password_confirmation
+        # hash[:city] = Geocoder.search params[:postalcode]                            # oauth params :provider, :uid, :name, :oauth_token, :oauth_expires_at
                                     )
       end
     
