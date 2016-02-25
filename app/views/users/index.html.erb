@@ -21,8 +21,11 @@
     <% user = user_selection.sample %>
     <strong><%= user.first_name %></strong>
     <%= link_to "Add Friend", connections_path(:friend_id => user), :method => :post %> 
-    <%= link_to "Accept", connection_path(@pending_request.first.id), method: :patch %>
-          <%= link_to "Decline", connection_path(@pending_request.first.id), method: :delete %>
+    <% @pending_request = show_pending_friends(user) %>
+    <% if @pending_request.count == 1 %>
+      <%= link_to "Accept", connection_path(@pending_request.first.id), method: :patch %>
+      <%= link_to "Decline", connection_path(@pending_request.first.id), method: :delete %>
+    <% end %>
   <% else %>
     No users to select from
   <% end %>
@@ -36,9 +39,4 @@
         <% @accept = Connection.where('friend_id = ? AND user_id = ? AND status = ?', current_user.id, user.id, 'pending') %>
         <% if @accept.count == 1 %>
           <%= link_to "Accept", connection_path(@accept.first), :method => :patch %>
-        <% end %> -->
-
-        <!-- <% @pending_request = show_pending_friends(user) %>
-        <% if @pending_request.count == 1 %>
-          
         <% end %> -->
