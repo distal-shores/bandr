@@ -20,6 +20,20 @@ $(function () {
     $(this).closest('#sidebar-bg').toggleClass('sidebar-bg-expand').toggleClass('sidebar-bg-collapse');
 
   });
+  $('#sign-in-btn').on('click', function(e) {
+    e.preventDefault();
+    $('#sign-in').addClass('is-active');
+  });
+
+  $('.modal-close').on('click', function(e) {
+    e.preventDefault();
+    $(this).closest('.modal').removeClass('is-active');
+  })
+
+  $('#sign-up-btn').on('click', function(e) {
+    e.preventDefault();
+    $('#sign-up').addClass('is-active');
+  });
 });
 
 

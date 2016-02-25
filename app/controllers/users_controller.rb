@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_filter :restrict_access
 
   def index
     @users = User.all
@@ -22,17 +21,17 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.create(user_params)
     
     #Grabbing postal code from signup form
-    if @user.postalcode?
-      @geocoder = Geocoder.search "#{user_params[:postalcode]}"
-      #storing the 'city' element (json via geocoder via google api) from the first array element
-      if !@geocoder.empty?
-        @user.city = @geocoder[0].city
-        @user.province = @geocoder[0].province
-      end
-    end
+    # if @user.postalcode?
+    #   @geocoder = Geocoder.search "#{user_params[:postalcode]}"
+    #   #storing the 'city' element (json via geocoder via google api) from the first array element
+    #   if !@geocoder.empty?
+    #     @user.city = @geocoder[0].city
+    #     @user.province = @geocoder[0].province
+    #   end
+    # end
 
     if @user.save
       session[:user_id] = @user.id
@@ -55,7 +54,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:admin, :first_name, :last_name, :email, :password, :password_confirmation, :postalcode)
+      params.require(:user).permit(:admin, :first_name, :last_name, :email, :password, :postalcode)
     end
     
 end
