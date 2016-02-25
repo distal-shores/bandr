@@ -8,7 +8,7 @@ module ConnectionsHelper
   end 
 
   def show_non_friends(user)
-    @user = Connection.where("status = '' AND user_id = ? OR user_id = ? AND friend_id = ? OR friend_id = ?", current_user.id, user.id, current_user.id, user.id)
+    @user = Connection.where("status = ? AND (user_id = ? OR user_id = ?) AND (friend_id = ? OR friend_id = ?)", 'pending', current_user.id, user.id, current_user.id, user.id)
     if @user
       return @user
     end
