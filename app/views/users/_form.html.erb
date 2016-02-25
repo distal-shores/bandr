@@ -33,7 +33,17 @@
     <%= f.label :admin %><br>
     <%= f.check_box :admin %>
   </div>
+   <div class="field">
+    <%= collection_select(:interest, :name, Interest.all, :kind, :name) %>
+<!--         <%= collection_select(:message, :recipient_id, User.all, :id, :full_name) %>
+ -->
+
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
+
+
+
+
 <% end %>
