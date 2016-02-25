@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :demo_links
   resources :demos
   resources :messages, only: [:index, :new, :create, :show]
-  resources :connections
+  resources :connections, only: [:create, :update, :delete]
   resources :interest_types
   resources :interests
   resources :interest_users

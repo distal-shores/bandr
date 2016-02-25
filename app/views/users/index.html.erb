@@ -5,14 +5,18 @@
     <% if user != current_user %>
       <div class="user">
         <p>
-          <strong><%= user.first_name %></strong>
-          <% @user = show_non_friends(user) %>
-          <% if @user.count == 0 %>
-            <%= link_to "Add Friend", connections_path(:friend_id => user), :method => :post %> 
-          <% end %>
-          <% @pending_request = show_pending_friends(user) %>
-          <% if @pending_request.count == 1 %>
-            <%= link_to "Accept", connection_path(@pending_request.first.id), :method => :patch %>
+          <% @friend = friends_already(user) %>
+          <% if @friend.count == 0 %>
+            <strong><%= user.first_name %></strong>
+            <% @user = show_non_friends(user) %>
+            <% if @user.count == 0 %>
+              <%= link_to "Add Friend", connections_path(:friend_id => user), :method => :post %> 
+            <% end %>
+            <% @pending_request = show_pending_friends(user) %>
+            <% if @pending_request.count == 1 %>
+              <%= link_to "Accept", connection_path(@pending_request.first.id), method: :patch %>
+              <%= link_to "Decline", connection_path(@pending_request.first.id), method: :delete %>
+            <% end %>
           <% end %>
         </p>
       </div>
