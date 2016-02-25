@@ -6,12 +6,72 @@
   </div>
   <div class='navbar-right'>
     <div class='navbar-item'>
-    <% if current_user %>
-      Signed in as <strong><%= current_user.first_name %></strong>!
-      <%= link_to "Sign out", signout_path, id: "sign_out" %>
-    <% else %>
-      <h2><%= link_to "Signup", new_user_path %> | <%= link_to "Login", new_session_path %></h2>
-    <% end %>
+      <% if current_user %>
+        Signed in as <strong><%= current_user.first_name %></strong>!
+        <%= link_to "Sign out", signout_path, id: "sign-out" %>
+      <% else %>
+        <h2><%= link_to "Signup", '#', id: 'sign-up-btn' %> | <%= link_to "Login", '#', id: 'sign-in-btn' %></h2>
+        <div class="modal" id="sign-in">
+          <div class="modal-background"></div>
+          <div class="modal-container">
+            <div class="modal-content">
+              <h1>Log In</h1>
+              <%= form_tag sessions_path do %>
+                <div>
+                  <%= label_tag :email %><br/>
+                  <%= text_field_tag :email %>
+                </div>
+                <div>
+                  <%= label_tag :password %><br/>
+                  <%= password_field_tag :password %>
+                </div>
+                <div><%= submit_tag "Log In" %></div>
+              <% end %>
+            </div>
+          </div>
+          <button class="modal-close"></button>
+        </div>
+
+        <div class="modal" id="sign-up">
+          <div class="modal-background"></div>
+          <div class="modal-container">
+            <div class="modal-content">
+              <h1>New User</h1>
+              <h1>Sign Up</h1>
+              <%= form_for(User.create, :as => :user ,:url => users_path(@user), :action => 'post') do |f| %>
+                <div class="field">
+                  <%= f.label :first_name %><br>
+                  <%= f.text_field :first_name %>
+                </div>
+                <div class="field">
+                  <%= f.label :last_name %><br>
+                  <%= f.text_field :last_name %>
+                </div>
+                <div class="field">
+                  <%= f.label :email %><br>
+                  <%= f.text_field :email %>
+                </div>
+                <div class="field">
+                  <%= f.label :password %><br>
+                  <%= f.password_field :password %>
+                </div>
+                 <div class="field">
+                  <%= f.label :postalcode %><br>
+                  <%= f.text_field :postalcode %>
+                </div>
+                <div class="field">
+                  <%= f.label :admin %><br>
+                  <%= f.check_box :admin %>
+                </div>
+                <div class="actions">
+                  <%= f.submit %>
+                </div>
+              <% end %>
+
+            </div>
+          <button class="modal-close"></button>
+        </div>
+      <% end %>
     </div>
   </div>
 </nav>
