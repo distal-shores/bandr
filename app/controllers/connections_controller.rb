@@ -1,12 +1,10 @@
 class ConnectionsController < ApplicationController
 
+  before_filter :restrict_access
+
   def create
-    # if no existing connection
-    # @connection = Connection.new
-    # @connection.request(current_user.id, params[:friend_id])
     flag=Connection.request(current_user.id, params[:friend_id])
     if flag==true
-    # if @connection.save
       flash[:notice] = "Request sent"
       redirect_to users_path
     else
@@ -26,9 +24,9 @@ class ConnectionsController < ApplicationController
   end
 
   def destroy
-    @connection = current_user.connections.find(params[:id])
+    @connection = Connection.find(params[:id])
     @connection.destroy
     flash[:notice] = "Removed connection."
-    redirect_to current_user
+    redirect_to users_path
   end
 end

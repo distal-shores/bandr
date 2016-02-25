@@ -18,5 +18,12 @@
 $(function () {
   $('.sidebar-btn').on('click', function() {
     $(this).closest('#sidebar-bg').toggleClass('sidebar-bg-expand').toggleClass('sidebar-bg-collapse');
+
   });
 });
+
+
+
+// Click on the sidebar button and have it make a query to the database looking for pending invites to the user. If it finds one, it should send back the result. The result should show up inside of the sidebar, listing the persons name and showing an accept/decline button.
+
+//
