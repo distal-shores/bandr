@@ -146,3 +146,18 @@ body {
     transform:translate3d(0,0,0) rotate(45deg) scale(0.1,0.1); 
   }
 }
+
+#video-background {
+  position: absolute;
+  display: block;  
+  right: 0; 
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  width: initial;   
+  height: auto;  
+  z-index: -999;
+  margin: 0 auto;
+  object-fit: cover;
+  padding: 0;
+}
