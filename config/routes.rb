@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+
   resources :connections
   get 'sessions/new'
   get 'auth/:provider/callback', to: 'sessions#create'
@@ -6,7 +8,7 @@ Rails.application.routes.draw do
   get 'sessions/create'
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
-
+  root 'welcome#index'
   resources :bands
   resources :band_users
   resources :demo_links
@@ -19,14 +21,6 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resource :home, only: [:show]
-
-
-
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  root 'sessions#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
