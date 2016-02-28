@@ -8,8 +8,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @users = User.all
-    @user = current_user
+    @user = User.find(params[:id])
   end
 
   #retreiving users location information

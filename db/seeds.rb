@@ -4,6 +4,7 @@ first_name: 'Joe',
 last_name: 'Ross', 
 password: '123456', 
 postalcode: 'V6C 1T7',
+description: 'alksjdkajsdlkasdjkasdj',
 admin: false 
 )
 
@@ -13,6 +14,7 @@ first_name: 'Steve',
 last_name: 'Ross', 
 password: '123456', 
 postalcode: 'V6C 1T7',
+description: 'alksjdkajsdlkasdjkasdj',
 admin: false 
 )
 
@@ -23,5 +25,6 @@ admin: false
  last_name: Faker::Name.last_name, 
  password: Faker::Internet.password(6), 
  postalcode: 'V6C 1T7',
+ description: 'alksjdkajsdlkasdjkasdj',
  admin: false }]) 
 end

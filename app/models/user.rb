@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
   validates :email, presence: true
   validates :postalcode, presence: true
   validates_format_of :postalcode, with: /\A([ABCEGHJKLMNPRSTVXY]{1}\d{1}[A-Z]{1} *\d{1}[A-Z]{1}\d{1})\Z/i, on: :create
+  validates :description, length: { minimum: 0,
+                                    maximum: 300 }
 
 
   has_many :connections
