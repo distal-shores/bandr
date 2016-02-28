@@ -1,9 +1,12 @@
 source 'https://rubygems.org'
 
 gem 'json'
+
 gem 'bulma'
 
 gem 'geocoder'
+
+gem 'soundcloud', '~> 0.3.2'
 
 gem 'vider', github: 'wazery/vider'
 

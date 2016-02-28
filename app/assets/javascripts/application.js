@@ -12,7 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.vide
+//= require jquery.vide.min.js
+//= require soundcloud-widget.min.js
 //= require turbolinks
 //= require_tree .
 
@@ -36,7 +37,6 @@ $(function () {
     $('#sign-up').addClass('is-active');
   });
 });
-
 
 
 // Click on the sidebar button and have it make a query to the database looking for pending invites to the user. If it finds one, it should send back the result. The result should show up inside of the sidebar, listing the persons name and showing an accept/decline button.
