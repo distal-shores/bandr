@@ -1,18 +1,9 @@
 
-<section id="video-block" class="fullscreen">
-    <!-- Adjust video height and width -->
-    <script>
-        var w = $(window).width(), h = $(window).height()  
-        $('#video-block video').css({height: ''+h+'',width: ''+w+''})
-        $(window).resize(function(){
-        var w = $(window).width(), h = $(window).height()  
-        $('#video-block video').css({height: ''+h+'',width: ''+w+''})
-        })  
-    </script>
-    <!-- Embed Video as Background-->
-    <div style="width:initial;" >
-        <video autoplay loop id="video-background" muted poster="thumbnail.jpg">
-            <source src="assets/video.mp4">
-        </video>
-    </div>
-</section>
+
+
+<div>
+    <video autoplay loop id="bgvid" muted poster="thumbnail.jpg">
+        <source src="assets/astrocolor.mp4">
+    </video>
+</div>
+

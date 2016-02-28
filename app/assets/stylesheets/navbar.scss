@@ -1,4 +1,54 @@
-$bg:#55505C;
+$bg:#6534ff;
+$gmblue:#62bcfa;
+$peach:#fccdd3;
+$lavendar:#bbc4ef;
+$popcent:#F4FF18;
+
+
+.navbar {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  left: 0;
+  right: 0;
+  background-color: $bg;
+  opacity: 0.9;
+  min-height: 50px;
+  width: 50%;
+  font-family: 'Viga', sans-serif;
+  }
+
+a.link.is-info {
+  color: white;
+  padding: 7px;
+}
+
+a.link.is-info:hover {
+  color: $peach;
+  border: 1px solid $peach;
+  animation-name: border;
+  animation-duration: 0.5s;
+  animation-name: link-color;
+  animation-duration: 0.5s;
+}
+
+@keyframes link-color {
+    from {color: white;}
+    to {color: $peach;}
+}
+
+@keyframes border {
+    from {border: none;}
+    to {border: 1px solid $peach;}
+}
+
+.navbar img {
+  height: 33px;
+}
+
+
+/* $bg:#55505C;
 $gmblue:#5D737E;
 $mint:#CDF9CB;
 $neutcent:#6CBD92;
@@ -15,9 +65,11 @@ h1.logo a {
 .navbar {
   background-color:$gmblue;
   min-height:79px;
-
+  width: 100%;
+  position: absolute;
+  clear: both;
   .navbar-right {
     color: $popcent;
     margin-right: 15px;
   }
-}
+} */
