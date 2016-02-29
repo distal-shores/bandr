@@ -33,13 +33,16 @@
   </div>
 </div>
 
+<% demo_string = @user.demo%>
+
 <script type='text/javascript'>
   $(window).load(function(){
+    var demo = '<%= demo_string %>'
     $(document).ready(function(){
       $('body').stratus({
         auto_play: true,
         download: false,
-        links: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
+        links: demo.toString(),
         random: false,
         buying: false,
         user: false,

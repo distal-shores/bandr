@@ -5,6 +5,7 @@ last_name: 'Ross',
 password: '123456', 
 postalcode: 'V6C 1T7',
 description: 'alksjdkajsdlkasdjkasdj',
+demo: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
 admin: false 
 )
 
@@ -15,6 +16,7 @@ last_name: 'Ross',
 password: '123456', 
 postalcode: 'V6C 1T7',
 description: 'alksjdkajsdlkasdjkasdj',
+demo: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
 admin: false 
 )
 
@@ -26,5 +28,6 @@ admin: false
  password: Faker::Internet.password(6), 
  postalcode: 'V6C 1T7',
  description: 'alksjdkajsdlkasdjkasdj',
+ demo: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
  admin: false }]) 
 end

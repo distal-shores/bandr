@@ -8,6 +8,10 @@ gem 'geocoder'
 
 gem 'soundcloud', '~> 0.3.2'
 
+gem 'carrierwave'
+
+gem "rmagick"
+
 gem 'vider', github: 'wazery/vider'
 
 
