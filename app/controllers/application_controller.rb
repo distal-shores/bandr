@@ -2,6 +2,12 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
+  before_filter :get_all_users
+
+  def get_all_users
+    @users = User.all
+  end
+
   protected
 
   def current_user
