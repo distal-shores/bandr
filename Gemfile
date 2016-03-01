@@ -16,6 +16,7 @@ gem 'vider', github: 'wazery/vider'
 
 gem 'sidr-rails', '~> 0.0.1.1'
 
+gem 'turbolinks'
 
 gem 'bootstrap-sass'
 
