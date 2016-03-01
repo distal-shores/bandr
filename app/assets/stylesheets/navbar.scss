@@ -6,7 +6,9 @@ $popcent:#F4FF18;
 
 
 .navbar {
-  position: absolute;
+
+  position: fixed;
+  z-index: 900;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
