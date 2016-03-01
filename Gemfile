@@ -8,8 +8,7 @@ gem 'geocoder'
 
 gem 'soundcloud', '~> 0.3.2'
 
-gem 'vider', github: 'wazery/vider'
-
+gem 'sidr-rails', '~> 0.0.1.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
