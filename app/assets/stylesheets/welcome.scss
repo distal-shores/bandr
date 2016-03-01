@@ -42,3 +42,32 @@
   color: white;
 
 }
+
+.sidr {
+  background: #1AFFAE;
+  box-shadow: 0 0 2px 2px #00AB6F inset;
+}
+
+.sidr ul {
+  color: #00AB6F;
+}
+
+.sidr ul li {
+  padding: 0px 0px 0px 10px;
+  font-family: Viga, sans-serif;
+  border-top: 1px solid #00AB6F;
+  border-bottom: 0.5px solid #00AB6F;
+
+    &:hover,
+    &.active,
+    &.sidr-class-active {
+      color: #de0052;
+      animation-name: link-color;
+      animation-duration: 0.5s;
+    }
+}
+
+@keyframes link-color {
+    from {color: #00AB6F;}
+    to {color: #de0052;}
+}

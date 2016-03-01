@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Bandr</title>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.sidr/2.2.1/stylesheets/jquery.sidr.dark.min.css">
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
@@ -14,25 +15,13 @@
  -->  <script type="text/javascript" src="https://stratus.soundcloud.com/stratus.js"></script>
 <meta name="viewport" content="width=device-width,minimum-scale=1">
     <!-- Include a Sidr bundled CSS theme -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.sidr/2.2.1/stylesheets/jquery.sidr.dark.min.css">
 </head>
 <body>
   <div id="wrapper">
     <%= render 'layouts/navbar' %>
 
     <% if current_user %>
-      <div id="sidr">
-        <div id="toggle-menu">
-          <a id="simple-menu" href="#sidr">
-            <img src="/assets/people.png" id="people-icon" />
-          </a>
-        </div>
-        <ul>
-          <li><a href="#">List 1</a></li>
-          <li class="active"><a href="#">List 2</a></li>
-          <li><a href="#">List 3</a></li>
-        </ul>
-      </div>
+      <%= render 'layouts/sidebar' %>
     <% end %>
 
     <%= yield %>

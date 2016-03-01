@@ -1,25 +1,24 @@
-<!-- <div id='sidebar-bg' class='sidebar-bg-collapse'>
-  <nav class='sidebar'>
-    <div class='sidebar-btn-bg'>
-      <input 
-      type='checkbox'
-      href='#'
-      class='sidebar-btn'
-      name='sidebar-btn'
-      id='sidebar-btn'/>
-      <label class='sidebar-btn-open' for='sidebar-btn'>
-        <i id='message-button'class="fa fa-comment-o"></i>
-        <span class="hamburger hamburger-1"></span>
-        <span class="hamburger hamburger-2"></span>
-      </label>
-    </div>
-  </nav>
-</div> -->
-
-<!-- <div id="sidr">
+<div id="sidr">
+  
+  <div id="toggle-menu">
+          
+    <a id="simple-menu" href="#sidr">
+      <img src="/assets/people.png" id="people-icon" />
+    </a>
+  
+  </div>
+        
   <ul>
-    <li><a href="#">List 1</a></li>
-    <li class="active"><a href="#">List 2</a></li>
-    <li><a href="#">List 3</a></li>
+    
+    <% friend_array = [] %>
+    <% current_user.connections.each do |connection| %>
+      <% friend_array.push(connection.friend_id) %>
+    <% end %>
+      
+    <% friend_array.each do |friend| %>
+      <li><%= User.find(friend).full_name %></li>
+    <%end%>
+  
   </ul>
-</div> -->
+
+</div>
