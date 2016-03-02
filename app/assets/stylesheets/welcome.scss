@@ -38,7 +38,7 @@
 
 #flex-item h1 {
   font-size: 5em;
-  font-family: 'Comfortaa', cursive;
+  font-family: 'Comfortaa', sans-serif;
   color: white;
 
 }
@@ -48,26 +48,48 @@
   box-shadow: 0 0 2px 2px #00AB6F inset;
 }
 
+.sidr-header {
+  font-family: Viga, sans-serif;
+  text-align: center;
+  font-size: 1.5em;
+  border-bottom: 0.5px solid #00AB6F;
+}
+
 .sidr ul {
   color: #00AB6F;
 }
 
 .sidr ul li {
-  padding: 0px 0px 0px 10px;
+    display: block;
+    margin: 0;
+    line-height: 30px;
+    border-top: 0px solid #00AB6F;
+    border-bottom: 0px solid #00AB6F;
+
+    &:hover,
+    &.active,
+    &.sidr-class-active {
+      box-shadow: none;
+    }
+}
+
+.sidr ul li a {
+  color: #00AB6F;
   font-family: Viga, sans-serif;
   border-top: 1px solid #00AB6F;
-  border-bottom: 0.5px solid #00AB6F;
+  border-bottom: 1px solid #00AB6F;
 
     &:hover,
     &.active,
     &.sidr-class-active {
       color: #de0052;
-      animation-name: link-color;
+      animation-name: sidebar-link-color;
       animation-duration: 0.5s;
+      box-shadow: 2px 2px black;
     }
 }
 
-@keyframes link-color {
+@keyframes sidebar-link-color {
     from {color: #00AB6F;}
     to {color: #de0052;}
 }

@@ -1,13 +1,13 @@
 <div id="sidr">
   
-  <div id="toggle-menu">
-          
-    <a id="simple-menu" href="#sidr">
+  <a id="simple-menu" href="#sidr">
+    <div id="toggle-menu">
       <img src="/assets/people.png" id="people-icon" />
-    </a>
+    </div>
+  </a>
   
-  </div>
-        
+  <div class="sidr-header">My Connections</div>
+
   <ul>
     
     <% friend_array = [] %>
@@ -16,7 +16,10 @@
     <% end %>
       
     <% friend_array.each do |friend| %>
-      <li><%= User.find(friend).full_name %></li>
+      <% @user = User.find(friend) %>
+      <li>
+        <%= link_to "#{@user.full_name}", user_path(@user.id) %>
+      </li>
     <%end%>
   
   </ul>

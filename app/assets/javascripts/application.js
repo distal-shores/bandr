@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery.sidr
+//= require jquery_ujs
 //= require soundcloud-widget.min.js
 //= require_tree .
 
