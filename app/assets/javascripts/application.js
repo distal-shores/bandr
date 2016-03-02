@@ -13,7 +13,6 @@
 //= require jquery.sidr
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require soundcloud-widget.min.js
 //= require_tree .
 
