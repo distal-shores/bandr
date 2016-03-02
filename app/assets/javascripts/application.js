@@ -10,8 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery.sidr
 //= require jquery
+//= require jquery.sidr
 //= require jquery_ujs
 //= require soundcloud-widget.min.js
 //= require_tree .
