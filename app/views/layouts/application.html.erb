@@ -10,6 +10,7 @@
   <link href='https://fonts.googleapis.com/css?family=Yellowtail|Damion' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Viga' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Comfortaa:700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lekton' rel='stylesheet' type='text/css'>
   <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
   <script type="text/javascript" src="https://stratus.soundcloud.com/stratus.js"></script>
   <link rel="stylesheet" type="text/css" src="assets/jquery.fullPage.css" />
@@ -47,17 +48,20 @@
 
         $('.startButton').on('click', function() {
 
-          $('#bgimg').slideDown(1200, function() {
-                // Animation complete.
+            $('#bgimg').slideDown(1200, function() {
+                  // Animation complete.
+            });
+
           });
 
-          $(self).fadeOut('slow',function(){
-            //Animation complete.
+          $(this).remove();
+
+          $("#show")
+            .css("display", "flex")
+            .hide()
+            .fadeIn(1500, function() {
+                //Animation complete
           });
-
-
-
-        });
   
 });
 
