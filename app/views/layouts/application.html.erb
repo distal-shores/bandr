@@ -46,9 +46,17 @@
         });
 
         $('.startButton').on('click', function() {
+
           $('#bgimg').slideDown(1200, function() {
                 // Animation complete.
-              });
+          });
+
+          $(self).fadeOut('slow',function(){
+            //Animation complete.
+          });
+
+
+
         });
   
 });
