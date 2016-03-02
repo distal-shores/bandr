@@ -1,12 +1,26 @@
-<h1>Log In</h1>
+<div class='container' id='login'>
+
+  <div id='login-page'>
+    <div id="flex-item">
+      <h1>Login</h1>
+    </div>
+
   <%= form_tag sessions_path do %>
-    <div>
-      <%= label_tag :email %><br/>
-      <%= text_field_tag :email %>
-    </div>
-    <div>
-      <%= label_tag :password %><br/>
-      <%= password_field_tag :password %>
-    </div>
-    <div><%= submit_tag "Log In" %></div>
-<% end %>
+
+  <div class = 'login-form'>
+    <%= label_tag :email %><br/>
+    <%= text_field_tag :email %>
+  </div>
+        
+  <div class ='login-form' >
+    <%= label_tag :password %><br/>
+    <%= password_field_tag :password %>
+  </div>
+
+  <div id='login-submit'><%= submit_tag "Log In" %></div>
+    <% end %>
+  </div>
+  </div>
+  <img id="concert" src = "/assets/concert.png">
+</div>
+
