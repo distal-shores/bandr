@@ -15,13 +15,11 @@
     <div class="card-content">
       <div class="columns">
         <ul class="column is-half is-text-centered">
-          <li>Fish</li>
-          <li>Sandwiches</li>
-          <li>Guitar</li>
+           <li><%= @user.interests.where(kind: 'instrument').first.try(:name) %></li>
         </ul>
         <ul class="column is-half is-text-centered">
-          <li>Hardcore</li>
-          <li>Polka</li>
+          <li><%= @user.interests.where(kind: 'genre').first.try(:name) %></li>
+          <li><%= @user.interests.where(kind: 'subgenre').first.try(:name) %></li>
         </ul>
       </div>
       <p id='player'>
