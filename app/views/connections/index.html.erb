@@ -1,28 +1,27 @@
-    <% unless current_user == @user %>
-        <%= link_to "Add Connection", connections_path(:connection_id => @user), :method => :post %>
-    <% end %>
-
-    <h4>connections</h4>
-    <ul>
-        <% @user.connections.each do |connection| %>
-        <li>
-          <%= connection.email %> 
-          <% if current_user == @user %>
-            <%= link_to "Remove", connection_path(:id => connection), :method => :delete %>
+<p id="notice"><%= notice %></p>
+<h1>User List</h1>
+<div id="users">
+  <% user_selection = [] %>
+  <% for user in @users %>
+    <% if user != current_user %>
+      <div class="user">
+        <p>
+          <% @mang = friends_already(user) %>
+          <% if @mang.count == 0 %>
+            <% @friend = show_non_friends(user) %>
+            <% if @friend.count == 0 %>
+             <% user_selection.push(user) %>
+            <% end %>
           <% end %>
-        </li>
-      <% end %>
-    </ul>
-
-    <% if current_user == @user %>
-        <h4>Connection Requests</h4>
-        <ul>
-            <% @user.requested_connection.each do |request| %>
-            <li>
-              <%= request.email %> 
-              <%= link_to "Accept", connection_path(:id => request), :method => "put" %> 
-              <%= link_to "Decline", connection_path(:id => request), :method => :delete %>
-            </li>
-          <% end %>
-        </ul>
+        </p>
+      </div>
     <% end %>
+  <% end %>
+  <% if user_selection.count != 0 %>
+    <% user = user_selection.sample %>
+    <strong><%= user.first_name %></strong>
+    <%= link_to "Add Friend", connections_path(:friend_id => user), :method => :post %> 
+  <% else %>
+    No users to select from
+  <% end %>
+</div>

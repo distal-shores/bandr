@@ -1,42 +1,121 @@
-<p id="notice"><%= notice %></p>
-<h1>User List</h1>
-<div id="users">
   <% user_selection = [] %>
-  <% for user in @users %>
+  <% @users.each do |user| %>
     <% if user != current_user %>
-      <div class="user">
-        <p>
-          <% @mang = friends_already(user) %>
-          <% if @mang.count == 0 %>
-            <% @friend = show_non_friends(user) %>
-            <% if @friend.count == 0 %>
-             <% user_selection.push(user) %>
-            <% end %>
-          <% end %>
-        </p>
-      </div>
+      <% @friends = friends_already(user) %>
+      <% if @friends.count == 0 %>
+        <% @friend = show_non_friends(user) %>
+        <% if @friend.count == 0 %>
+         <% user_selection.push(user) %>
+        <% end %>
+      <% end %>
     <% end %>
   <% end %>
   <% if user_selection.count != 0 %>
-    <% user = user_selection.sample %>
-    <strong><%= user.first_name %></strong>
-    <%= link_to "Add Friend", connections_path(:friend_id => user), :method => :post %> 
-    <% @pending_request = show_pending_friends(user) %>
-    <% if @pending_request.count == 1 %>
-      <%= link_to "Accept", connection_path(@pending_request.first.id), method: :patch %>
-      <%= link_to "Decline", connection_path(@pending_request.first.id), method: :delete %>
-    <% end %>
-  <% else %>
-    No users to select from
+    <% @random_users = user_selection.sample(3) %>
+    <% @user1 = @random_users[0] %>
+    <% @user2 = @random_users[1] %>
+    <% @user3 = @random_users[2] %>
   <% end %>
 </div>
 
-        <!-- <strong><%= user.first_name %></strong>
-        <% @connection = Connection.where('user_id = ? AND friend_id = ?', current_user.id, user.id) %>
-        <% if @connection.count == 0 %>
-          <%= link_to "Add Friend", connections_path(:friend_id => user), :method => :post %> 
-        <% end %>
-        <% @accept = Connection.where('friend_id = ? AND user_id = ? AND status = ?', current_user.id, user.id, 'pending') %>
-        <% if @accept.count == 1 %>
-          <%= link_to "Accept", connection_path(@accept.first), :method => :patch %>
-        <% end %> -->
+
+
+<div id="fullpage">
+  <div class="section">
+   <% if @user1 %>
+    <div class="slide"><div class="columns">
+  <div class="card column is-half is-offset-quarter is-fullheight">
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-10 is-text-centered"><%= @user1.first_name %></p>
+      </div>
+    </div>
+    <figure class="card-image is-4x3">
+      <img src="http://placehold.it/300x225" alt="">
+    </figure>
+    <div class="card-content">
+      <div class="columns">
+        <ul class="column is-half is-text-centered">
+           <li><%= @user1.interests.where(kind: 'instrument').first.try(:name) %></li>
+        </ul>
+        <ul class="column is-half is-text-centered">
+          <li><%= @user1.interests.where(kind: 'genre').first.try(:name) %></li>
+          <li><%= @user1.interests.where(kind: 'subgenre').first.try(:name) %></li>
+        </ul>
+      </div>
+      <p id='player'>
+      </p>
+    </div>
+      <div class="content user-description is-text-centered">
+        <%= @user1.description %>
+    </div>
+  </div>
+</div>
+</div>
+<% end %>
+<% if @user2 %>
+    <div class="slide">
+    <div class="columns">
+  <div class="card column is-half is-offset-quarter is-fullheight">
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-10 is-text-centered"><%= @user2.first_name %></p>
+      </div>
+    </div>
+    <figure class="card-image is-4x3">
+      <img src="http://placehold.it/300x225" alt="">
+    </figure>
+    <div class="card-content">
+      <div class="columns">
+        <ul class="column is-half is-text-centered">
+           <li><%= @user2.interests.where(kind: 'instrument').first.try(:name) %></li>
+        </ul>
+        <ul class="column is-half is-text-centered">
+          <li><%= @user2.interests.where(kind: 'genre').first.try(:name) %></li>
+          <li><%= @user2.interests.where(kind: 'subgenre').first.try(:name) %></li>
+        </ul>
+      </div>
+      <p id='player'>
+      </p>
+    </div>
+      <div class="content user-description is-text-centered">
+        <%= @user2.description %>
+    </div>
+  </div>
+</div>
+</div>
+<% end %>
+<% if @user3 %>
+    <div class="slide">
+      <div class="columns">
+  <div class="card column is-half is-offset-quarter is-fullheight">
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-10 is-text-centered"><%= @user3.first_name %></p>
+      </div>
+    </div>
+    <figure class="card-image is-4x3">
+      <img src="http://placehold.it/300x225" alt="">
+    </figure>
+    <div class="card-content">
+      <div class="columns">
+        <ul class="column is-half is-text-centered">
+           <li><%= @user3.interests.where(kind: 'instrument').first.try(:name) %></li>
+        </ul>
+        <ul class="column is-half is-text-centered">
+          <li><%= @user3.interests.where(kind: 'genre').first.try(:name) %></li>
+          <li><%= @user3.interests.where(kind: 'subgenre').first.try(:name) %></li>
+        </ul>
+      </div>
+      <p id='player'>
+      </p>
+    </div>
+      <div class="content user-description is-text-centered">
+        <%= @user3.description %>
+    </div>
+  </div>
+</div>
+<% end %>
+    </div>
+  </div>
+</div>
