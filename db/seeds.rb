@@ -314,18 +314,3 @@ Interest.create(
 kind: 'instrument', 
 name: 'acoustic guitar',
 )
-
-
-<<<<<<< HEAD
-1.times do User.create([{ 
- email: Faker::Internet.email, 
- first_name: Faker::Name.first_name, 
- last_name: Faker::Name.last_name, 
- password: Faker::Internet.password(6), 
- postalcode: 'V6C 1T7',
- description: 'alksjdkajsdlkasdjkasdj',
- demo: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
- admin: false }]) 
-end
-=======
->>>>>>> cd1265336f61112370c1222ecc77704a74c98000
