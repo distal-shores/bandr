@@ -210,26 +210,30 @@ body {
   margin-left: 45%; 
 }
 
-#signup-page {
+#signup {
   position: absolute;
-  display: block;
-  margin: 0 auto;
-  margin-top: 150px;
-  margin-left: 45%; 
+  margin-top: 150px; 
+  border-radius: 7px;
+  margin-left: 43.5%;
+  background-color:rgba(255,255,255,.4);
 }
 
 #login-page #flex-item h1 {
 color: #7448FF;
-text-align: center;
 font-size: 45px;
 opacity: 0.65;
 }
 
+.action {
+  text-align: center;
+}
+
 #sign-up {
-color: #6F3EF2;
+color: #7448FF;
 font-family:'Comfortaa', Helvetica;
 font-size: 55px;
-opacity: 0.73;
+opacity: 0.65;
+-webkit-text-stroke: 0.2px black;
 }
 
 #concert {
@@ -261,17 +265,24 @@ opacity: 0.73;
 }
 
 .login-form label {
-  font-family: Helvetica;
+  font-family: 'Comfortaa', Helvetica;
   font-weight: bold;
   font-size: 15px;
   color: #7448FF;
-  opacity: 0.85;
+  opacity: 0.95;
 }
 
 .field label {
   font-family: 'Comfortaa', Helvetica;
   font-weight: bold;
   font-size: 17px;
-  color: #4834FF;
+  color: #7448FF;
   opacity: 0.92;
 }
+
+.field {
+  text-align: center;
+}
+
+
+

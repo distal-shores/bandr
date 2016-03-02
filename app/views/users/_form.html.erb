@@ -1,7 +1,6 @@
-<div class='container' id='signup'>
-  <div id='signup-page'>
-    
-      <h1 id="sign-up">Sign Up</h1>
+<div id="signup">
+<div class='container'>
+      <h1 class "hero" id="sign-up">Sign Up</h1>
     
     <%= form_for(@user) do |f| %>
     <% if @user.errors.any? %>
@@ -34,24 +33,25 @@
       <%= f.label :postalcode %><br>
       <%= f.text_field :postalcode %>
     </div>
-    <div class="field">
+    <!-- <div class="field">
       <%= f.label :admin %><br>
       <%= f.check_box :admin %>
-    </div>
+    </div> -->
      <div class="field">
       <%= f.label :description %><br>
       <%= f.text_area :description %>
     </div>
-    <div class="field">
+  <!--   <div class="field">
       <%= collection_select(:interest, :name, Interest.all, :kind, :name) %>
-      <!--         <%= collection_select(:message, :recipient_id, User.all, :id, :full_name) %>
-      -->
+              <%= collection_select(:message, :recipient_id, User.all, :id, :full_name) %>
+     
+    </div> -->
+    <div class="action">
+    <%= f.submit %>
     </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
+    <% end %>
   </div>
-  <img id="band" src = "/assets/band.png">
-</div>
+  </div>
 
-<% end %>
+
+  <img id="band" src = "/assets/band.png">
