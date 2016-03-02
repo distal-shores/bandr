@@ -48,12 +48,10 @@
 
         $('.startButton').on('click', function() {
 
-            $('#bgimg').slideDown(1200, function() {
-                  // Animation complete.
-            });
-
+          $('#bgimg').slideDown(1200, function() {
+                // Animation complete.
           });
-
+            
           $(this).remove();
 
           $("#show")
@@ -62,6 +60,8 @@
             .fadeIn(1500, function() {
                 //Animation complete
           });
+
+      });
   
 });
 
