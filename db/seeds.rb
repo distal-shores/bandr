@@ -5,6 +5,7 @@ last_name: 'Ross',
 password: '123456', 
 demo: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
 postalcode: 'V1L 4C5',
+city: 'Nelson',
 description: 'Number one Nickelback fan.',
 admin: false 
 )
@@ -16,6 +17,7 @@ last_name: 'Luterbach',
 password: '123456', 
 demo: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
 postalcode: 'V6B 5X6',
+city: 'Vancouver',
 description: 'Really into music and web development.',
 admin: false 
 )
@@ -27,6 +29,7 @@ last_name: 'Coll',
 password: '123456', 
 demo: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
 postalcode: 'V6B 5X6',
+city: 'Vancouver',
 description: 'Looking for a bass player to collaborate with.',
 admin: false 
 )
@@ -38,16 +41,18 @@ last_name: 'Smith',
 password: '123456', 
 demo: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
 postalcode: 'V6B 5X6',
+city: 'Vancouver',
 description: 'I love making music and want to join a band!',
 admin: false 
 )
 
 User.create(
-email: 'kate@test.com',
-first_name: 'Kate', 
-last_name: 'Morrison', 
+email: 'kathy@test.com',
+first_name: 'Kathy', 
+last_name: 'May', 
 password: '123456', 
 postalcode: 'L6R 1A1',
+city: 'Calgary',
 demo: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
 description: 'I have been playing different types of music for 20 years!',
 admin: false 
@@ -59,6 +64,7 @@ first_name: 'Don',
 last_name: 'Draper', 
 password: '123456', 
 postalcode: ' T1X 0L3',
+city: 'Toronto',
 demo: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
 description: 'Marketer by day - musician by night.',
 admin: false 
@@ -70,6 +76,7 @@ first_name: 'Anne',
 last_name: 'Donaldson', 
 password: '123456', 
 postalcode: ' T1X 0L3',
+city: 'Toronto',
 demo: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
 description: 'Love learning new instruments. Hoping to start a band!',
 admin: false 
@@ -82,6 +89,7 @@ last_name: 'Moore',
 password: '123456', 
 demo: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
 postalcode: ' T1X 0L3',
+city: 'Toronto',
 description: 'Secret agent by day - musician by night.',
 admin: false 
 )
@@ -93,6 +101,7 @@ last_name: 'Winterson',
 password: '123456', 
 demo: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
 postalcode: ' T1X 0L3',
+city: 'Toronto',
 description: 'Looking for bandmates! I love making music.',
 admin: false 
 )
@@ -104,15 +113,9 @@ last_name: 'Bishop',
 password: '123456', 
 demo: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
 postalcode: 'T1X 0L3',
+city: 'Toronto',
 description: 'Looking to jam with other musicians!.',
 admin: false 
-  email: 'joe@test.com',
-  first_name: 'Joe', 
-  last_name: 'Ross', 
-  password: '123456', 
-  postalcode: 'V1L 4C5',
-  description: 'Number one Nickelback fan.',
-  admin: false 
 )
 
 User.create(
@@ -121,6 +124,7 @@ User.create(
   last_name: 'Luterbach', 
   password: '123456', 
   postalcode: 'V6B 5X6',
+  city: 'Vancouver',
   description: 'Really into music and web development.',
   admin: false 
 )
@@ -131,6 +135,7 @@ User.create(
   last_name: 'Coll', 
   password: '123456', 
   postalcode: 'V6B 5X6',
+  city: 'Vancouver',
   description: 'Looking for a bass player to collaborate with.',
   admin: false 
 )
@@ -141,6 +146,7 @@ User.create(
   last_name: 'Smith', 
   password: '123456', 
   postalcode: 'V6B 5X6',
+  city: 'Vancouver',
   description: 'I love making music and want to join a band!',
   admin: false 
 )
@@ -151,6 +157,7 @@ User.create(
   last_name: 'Madison', 
   password: '123456', 
   postalcode: 'L6R 1A1',
+  city: 'Vancouver',
   description: 'I have been playing different types of music for 20 years!',
   admin: false 
 )
@@ -161,6 +168,7 @@ User.create(
   last_name: 'Draper', 
   password: '123456', 
   postalcode: ' T1X 0L3',
+  city: 'Toronto',
   description: 'Marketer by day - musician by night.',
   admin: false 
 )
@@ -171,6 +179,7 @@ User.create(
   last_name: 'Donaldson', 
   password: '123456', 
   postalcode: ' T1X 0L3',
+  city: 'Toronto',
   description: 'Love learning new instruments. Hoping to start a band!',
   admin: false 
 )
@@ -181,6 +190,7 @@ User.create(
   last_name: 'Moore', 
   password: '123456', 
   postalcode: ' T1X 0L3',
+  city: 'Toronto',
   description: 'Secret agent by day - musician by night.',
   admin: false 
 )
@@ -191,6 +201,7 @@ User.create(
   last_name: 'Winterson', 
   password: '123456', 
   postalcode: ' T1X 0L3',
+  city: 'Toronto',
   description: 'Looking for bandmates! I love making music.',
   admin: false 
 )
@@ -201,6 +212,7 @@ User.create(
   last_name: 'Bishop', 
   password: '123456', 
   postalcode: 'T1X 0L3',
+  city: 'Toronto',
   description: 'Looking to jam with other musicians!.',
   admin: false 
 )
@@ -431,4 +443,4 @@ User.all.each do |user|
   interest = subgenre_interests[rand(subgenre_interests.count)]
   user.interests << interest
 end
->>>>>>> user_view_logic
+
