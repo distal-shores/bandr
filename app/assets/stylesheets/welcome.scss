@@ -70,7 +70,19 @@
   text-align: center;
   font-size: 1.5em;
   border-bottom: 0.5px solid #00AB6F;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: #de0052;
+
 }
+
+.sidr-secondary-header {
+  font-family: Viga, sans-serif;
+  text-align: center;
+  font-size: 1.0em;
+  border-bottom: 0.5px solid #00AB6F;
+}
+
+
 
 .sidr ul {
   color: #00AB6F;

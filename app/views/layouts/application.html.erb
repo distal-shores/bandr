@@ -63,7 +63,14 @@
 
           $(".flex-item h1").addClass('move_up');
 
-      });
+        });
+
+        $('#bgvid').on('ended', function () {
+          this.load();
+          this.play();
+        });
+
+
   
 });
 
