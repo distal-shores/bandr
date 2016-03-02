@@ -1,46 +1,53 @@
-#video-background {
-  position: absolute;
-  display: block;  
-  right: 0; 
-  bottom: 0;
-  min-width: 100%; 
-  min-height: 100%;
-  width: initial;   
-  height: auto;  
-  z-index: -999;
-  margin: 0 auto;
-  object-fit: cover;
-  padding: 0;
-}
-
-#flex-container {
-  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -webkit-flex;     /* NEW - Chrome */
-  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
-  -webkit-box-flex-direction: row;
-  -moz-box-flex-direction: row;
-  -webkit-flex-direction: row;
-  flex-direction: row;
+#bgvid {
+  z-index: -2;
+  width: 100%;
+  height: 100%;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  object-fit: cover;
+}
+
+#bgimg {
+  z-index: -1;
   width: 100%;
   height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  object-fit: cover;
+  display:none;
 }
 
-#flex-item {
-  background: none;
+#flex-container {
+  display: -webkit-box;
+  display: -moz-box;         
+  display: -webkit-flex;    
+  display: flex;             
+  flex-direction: column;
+  position: fixed;
+  top: 25%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  z-index: 3;
+}
+
+.flex-item {
   margin: auto;
+  display: block;
 }
 
-#flex-item h1 {
+.flex-item h1 {
   font-size: 5em;
   font-family: 'Comfortaa', sans-serif;
   color: white;
-
 }
 
 .sidr {
@@ -92,4 +99,23 @@
 @keyframes sidebar-link-color {
     from {color: #00AB6F;}
     to {color: #de0052;}
+}
+
+.startButton {
+  background-color:transparent;
+  border-radius:18px;
+  border:5px solid #6334ff;
+  cursor:pointer;
+  color:#f3ff18;
+  font-family: 'Comfortaa', sans-serif;
+  font-size:22px;
+  padding:8px 16px;
+  text-decoration:none;
+}
+.startButton:hover {
+  background-color:#de0052;
+}
+.startButton:active {
+  position:relative;
+  top:1px;
 }
