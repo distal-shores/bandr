@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     
-    #Grabbing postal code from signup form
+    # # Grabbing postal code from signup form
     # if @user.postalcode?
     #   @geocoder = Geocoder.search "#{user_params[:postalcode]}"
     #   #storing the 'city' element (json via geocoder via google api) from the first array element

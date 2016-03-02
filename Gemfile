@@ -8,7 +8,15 @@ gem 'geocoder'
 
 gem 'soundcloud', '~> 0.3.2'
 
+gem 'carrierwave'
+
+gem "rmagick"
+
+gem 'vider', github: 'wazery/vider'
+
 gem 'sidr-rails', '~> 0.0.1.1'
+
+gem 'turbolinks'
 
 gem 'bootstrap-sass'
 
