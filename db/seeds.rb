@@ -34,188 +34,188 @@ description: 'Looking for a bass player to collaborate with.',
 admin: false 
 )
 
-User.create(
-email: 'jessica@test.com',
-first_name: 'Jessica', 
-last_name: 'Smith', 
-password: '123456', 
-demo: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
-postalcode: 'V6B 5X6',
-city: 'Vancouver',
-description: 'I love making music and want to join a band!',
-admin: false 
-)
+# User.create(
+# email: 'jessica@test.com',
+# first_name: 'Jessica', 
+# last_name: 'Smith', 
+# password: '123456', 
+# demo: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
+# postalcode: 'V6B 5X6',
+# city: 'Vancouver',
+# description: 'I love making music and want to join a band!',
+# admin: false 
+# )
 
-User.create(
-email: 'kathy@test.com',
-first_name: 'Kathy', 
-last_name: 'May', 
-password: '123456', 
-postalcode: 'L6R 1A1',
-city: 'Calgary',
-demo: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
-description: 'I have been playing different types of music for 20 years!',
-admin: false 
-)
+# User.create(
+# email: 'kathy@test.com',
+# first_name: 'Kathy', 
+# last_name: 'May', 
+# password: '123456', 
+# postalcode: 'L6R 1A1',
+# city: 'Calgary',
+# demo: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
+# description: 'I have been playing different types of music for 20 years!',
+# admin: false 
+# )
 
-User.create(
-email: 'don@test.com',
-first_name: 'Don', 
-last_name: 'Draper', 
-password: '123456', 
-postalcode: ' T1X 0L3',
-city: 'Toronto',
-demo: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
-description: 'Marketer by day - musician by night.',
-admin: false 
-)
+# User.create(
+# email: 'don@test.com',
+# first_name: 'Don', 
+# last_name: 'Draper', 
+# password: '123456', 
+# postalcode: ' T1X 0L3',
+# city: 'Toronto',
+# demo: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
+# description: 'Marketer by day - musician by night.',
+# admin: false 
+# )
 
-User.create(
-email: 'anne@test.com',
-first_name: 'Anne', 
-last_name: 'Donaldson', 
-password: '123456', 
-postalcode: ' T1X 0L3',
-city: 'Toronto',
-demo: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
-description: 'Love learning new instruments. Hoping to start a band!',
-admin: false 
-)
+# User.create(
+# email: 'anne@test.com',
+# first_name: 'Anne', 
+# last_name: 'Donaldson', 
+# password: '123456', 
+# postalcode: ' T1X 0L3',
+# city: 'Toronto',
+# demo: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
+# description: 'Love learning new instruments. Hoping to start a band!',
+# admin: false 
+# )
 
-User.create(
-email: 'roger@test.com',
-first_name: 'Roger', 
-last_name: 'Moore', 
-password: '123456', 
-demo: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
-postalcode: ' T1X 0L3',
-city: 'Toronto',
-description: 'Secret agent by day - musician by night.',
-admin: false 
-)
+# User.create(
+# email: 'roger@test.com',
+# first_name: 'Roger', 
+# last_name: 'Moore', 
+# password: '123456', 
+# demo: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
+# postalcode: ' T1X 0L3',
+# city: 'Toronto',
+# description: 'Secret agent by day - musician by night.',
+# admin: false 
+# )
 
-User.create(
-email: 'al@test.com',
-first_name: 'Al', 
-last_name: 'Winterson', 
-password: '123456', 
-demo: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
-postalcode: ' T1X 0L3',
-city: 'Toronto',
-description: 'Looking for bandmates! I love making music.',
-admin: false 
-)
+# User.create(
+# email: 'al@test.com',
+# first_name: 'Al', 
+# last_name: 'Winterson', 
+# password: '123456', 
+# demo: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
+# postalcode: ' T1X 0L3',
+# city: 'Toronto',
+# description: 'Looking for bandmates! I love making music.',
+# admin: false 
+# )
 
-User.create(
-email: 'logan@test.com',
-first_name: 'Logan', 
-last_name: 'Bishop', 
-password: '123456', 
-demo: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
-postalcode: 'T1X 0L3',
-city: 'Toronto',
-description: 'Looking to jam with other musicians!.',
-admin: false 
-)
+# User.create(
+# email: 'logan@test.com',
+# first_name: 'Logan', 
+# last_name: 'Bishop', 
+# password: '123456', 
+# demo: 'https://soundcloud.com/jtraxx/vitas-the-7th-element',
+# postalcode: 'T1X 0L3',
+# city: 'Toronto',
+# description: 'Looking to jam with other musicians!.',
+# admin: false 
+# )
 
-User.create(
-  email: 'colesone@test.com',
-  first_name: 'Coleson', 
-  last_name: 'Luterbach', 
-  password: '123456', 
-  postalcode: 'V6B 5X6',
-  city: 'Vancouver',
-  description: 'Really into music and web development.',
-  admin: false 
-)
+# User.create(
+#   email: 'colesone@test.com',
+#   first_name: 'Coleson', 
+#   last_name: 'Luterbach', 
+#   password: '123456', 
+#   postalcode: 'V6B 5X6',
+#   city: 'Vancouver',
+#   description: 'Really into music and web development.',
+#   admin: false 
+# )
 
-User.create(
-  email: 'sam@test.com',
-  first_name: 'Sam', 
-  last_name: 'Coll', 
-  password: '123456', 
-  postalcode: 'V6B 5X6',
-  city: 'Vancouver',
-  description: 'Looking for a bass player to collaborate with.',
-  admin: false 
-)
+# User.create(
+#   email: 'sam@test.com',
+#   first_name: 'Sam', 
+#   last_name: 'Coll', 
+#   password: '123456', 
+#   postalcode: 'V6B 5X6',
+#   city: 'Vancouver',
+#   description: 'Looking for a bass player to collaborate with.',
+#   admin: false 
+# )
 
-User.create(
-  email: 'jessica@test.com',
-  first_name: 'Jessica', 
-  last_name: 'Smith', 
-  password: '123456', 
-  postalcode: 'V6B 5X6',
-  city: 'Vancouver',
-  description: 'I love making music and want to join a band!',
-  admin: false 
-)
+# User.create(
+#   email: 'jessica@test.com',
+#   first_name: 'Jessica', 
+#   last_name: 'Smith', 
+#   password: '123456', 
+#   postalcode: 'V6B 5X6',
+#   city: 'Vancouver',
+#   description: 'I love making music and want to join a band!',
+#   admin: false 
+# )
 
-User.create(
-  email: 'kathy@test.com',
-  first_name: 'Kathy', 
-  last_name: 'Madison', 
-  password: '123456', 
-  postalcode: 'L6R 1A1',
-  city: 'Vancouver',
-  description: 'I have been playing different types of music for 20 years!',
-  admin: false 
-)
+# User.create(
+#   email: 'kathy@test.com',
+#   first_name: 'Kathy', 
+#   last_name: 'Madison', 
+#   password: '123456', 
+#   postalcode: 'L6R 1A1',
+#   city: 'Vancouver',
+#   description: 'I have been playing different types of music for 20 years!',
+#   admin: false 
+# )
 
-User.create(
-  email: 'don@test.com',
-  first_name: 'Don', 
-  last_name: 'Draper', 
-  password: '123456', 
-  postalcode: ' T1X 0L3',
-  city: 'Toronto',
-  description: 'Marketer by day - musician by night.',
-  admin: false 
-)
+# User.create(
+#   email: 'don@test.com',
+#   first_name: 'Don', 
+#   last_name: 'Draper', 
+#   password: '123456', 
+#   postalcode: ' T1X 0L3',
+#   city: 'Toronto',
+#   description: 'Marketer by day - musician by night.',
+#   admin: false 
+# )
 
-User.create(
-  email: 'anne@test.com',
-  first_name: 'Anne', 
-  last_name: 'Donaldson', 
-  password: '123456', 
-  postalcode: ' T1X 0L3',
-  city: 'Toronto',
-  description: 'Love learning new instruments. Hoping to start a band!',
-  admin: false 
-)
+# User.create(
+#   email: 'anne@test.com',
+#   first_name: 'Anne', 
+#   last_name: 'Donaldson', 
+#   password: '123456', 
+#   postalcode: ' T1X 0L3',
+#   city: 'Toronto',
+#   description: 'Love learning new instruments. Hoping to start a band!',
+#   admin: false 
+# )
 
-User.create(
-  email: 'roger@test.com',
-  first_name: 'Roger', 
-  last_name: 'Moore', 
-  password: '123456', 
-  postalcode: ' T1X 0L3',
-  city: 'Toronto',
-  description: 'Secret agent by day - musician by night.',
-  admin: false 
-)
+# User.create(
+#   email: 'roger@test.com',
+#   first_name: 'Roger', 
+#   last_name: 'Moore', 
+#   password: '123456', 
+#   postalcode: ' T1X 0L3',
+#   city: 'Toronto',
+#   description: 'Secret agent by day - musician by night.',
+#   admin: false 
+# )
 
-User.create(
-  email: 'al@test.com',
-  first_name: 'Al', 
-  last_name: 'Winterson', 
-  password: '123456', 
-  postalcode: ' T1X 0L3',
-  city: 'Toronto',
-  description: 'Looking for bandmates! I love making music.',
-  admin: false 
-)
+# User.create(
+#   email: 'al@test.com',
+#   first_name: 'Al', 
+#   last_name: 'Winterson', 
+#   password: '123456', 
+#   postalcode: ' T1X 0L3',
+#   city: 'Toronto',
+#   description: 'Looking for bandmates! I love making music.',
+#   admin: false 
+# )
 
-User.create(
-  email: 'logan@test.com',
-  first_name: 'Logan', 
-  last_name: 'Bishop', 
-  password: '123456', 
-  postalcode: 'T1X 0L3',
-  city: 'Toronto',
-  description: 'Looking to jam with other musicians!.',
-  admin: false 
-)
+# User.create(
+#   email: 'logan@test.com',
+#   first_name: 'Logan', 
+#   last_name: 'Bishop', 
+#   password: '123456', 
+#   postalcode: 'T1X 0L3',
+#   city: 'Toronto',
+#   description: 'Looking to jam with other musicians!.',
+#   admin: false 
+# )
 
 # 1.times do User.create([{ 
 #  email: Faker::Internet.email, 

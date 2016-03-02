@@ -1,7 +1,121 @@
-<div id='fullpage'>
-  <div class='section'>
-    <div class='slide'>User 1</div>
-    <div class='slide'>User 2</div>
-    <div class='slide'>User 3</div>
+  <% user_selection = [] %>
+  <% @users.each do |user| %>
+    <% if user != current_user %>
+      <% @friends = friends_already(user) %>
+      <% if @friends.count == 0 %>
+        <% @friend = show_non_friends(user) %>
+        <% if @friend.count == 0 %>
+         <% user_selection.push(user) %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <% if user_selection.count != 0 %>
+    <% @random_users = user_selection.sample(3) %>
+    <% @user1 = @random_users[0] %>
+    <% @user2 = @random_users[1] %>
+    <% @user3 = @random_users[2] %>
+  <% end %>
+</div>
+
+
+
+<div id="fullpage">
+  <div class="section">
+   <% if @user1 %>
+    <div class="slide"><div class="columns">
+  <div class="card column is-half is-offset-quarter is-fullheight">
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-10 is-text-centered"><%= @user1.first_name %></p>
+      </div>
+    </div>
+    <figure class="card-image is-4x3">
+      <img src="http://placehold.it/300x225" alt="">
+    </figure>
+    <div class="card-content">
+      <div class="columns">
+        <ul class="column is-half is-text-centered">
+           <li><%= @user1.interests.where(kind: 'instrument').first.try(:name) %></li>
+        </ul>
+        <ul class="column is-half is-text-centered">
+          <li><%= @user1.interests.where(kind: 'genre').first.try(:name) %></li>
+          <li><%= @user1.interests.where(kind: 'subgenre').first.try(:name) %></li>
+        </ul>
+      </div>
+      <p id='player'>
+      </p>
+    </div>
+      <div class="content user-description is-text-centered">
+        <%= @user1.description %>
+    </div>
+  </div>
+</div>
+</div>
+<% end %>
+<% if @user2 %>
+    <div class="slide">
+    <div class="columns">
+  <div class="card column is-half is-offset-quarter is-fullheight">
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-10 is-text-centered"><%= @user2.first_name %></p>
+      </div>
+    </div>
+    <figure class="card-image is-4x3">
+      <img src="http://placehold.it/300x225" alt="">
+    </figure>
+    <div class="card-content">
+      <div class="columns">
+        <ul class="column is-half is-text-centered">
+           <li><%= @user2.interests.where(kind: 'instrument').first.try(:name) %></li>
+        </ul>
+        <ul class="column is-half is-text-centered">
+          <li><%= @user2.interests.where(kind: 'genre').first.try(:name) %></li>
+          <li><%= @user2.interests.where(kind: 'subgenre').first.try(:name) %></li>
+        </ul>
+      </div>
+      <p id='player'>
+      </p>
+    </div>
+      <div class="content user-description is-text-centered">
+        <%= @user2.description %>
+    </div>
+  </div>
+</div>
+</div>
+<% end %>
+<% if @user3 %>
+    <div class="slide">
+      <div class="columns">
+  <div class="card column is-half is-offset-quarter is-fullheight">
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-10 is-text-centered"><%= @user3.first_name %></p>
+      </div>
+    </div>
+    <figure class="card-image is-4x3">
+      <img src="http://placehold.it/300x225" alt="">
+    </figure>
+    <div class="card-content">
+      <div class="columns">
+        <ul class="column is-half is-text-centered">
+           <li><%= @user3.interests.where(kind: 'instrument').first.try(:name) %></li>
+        </ul>
+        <ul class="column is-half is-text-centered">
+          <li><%= @user3.interests.where(kind: 'genre').first.try(:name) %></li>
+          <li><%= @user3.interests.where(kind: 'subgenre').first.try(:name) %></li>
+        </ul>
+      </div>
+      <p id='player'>
+      </p>
+    </div>
+      <div class="content user-description is-text-centered">
+        <%= @user3.description %>
+    </div>
+  </div>
+</div>
+<% end %>
+    </div>
   </div>
 </div>
