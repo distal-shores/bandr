@@ -1,0 +1,19 @@
+<div id="msg_sidr">
+  
+  <a id="other-menu" href="#msg_sidr">
+    <div id="msg-menu">
+      <img src="/assets/message.png" id="msg-icon" />
+    </div>
+  </a>
+  
+  <div class="sidr-header">My Messages</div>
+
+  <ul>
+  <% @messages = Message.all.where('recipient_id = ?', current_user.id.to_s) %>
+  <% @messages.each do |message| %>
+    <li><%= message.subject %></li>
+    <% end %>
+
+  </ul>
+
+</div>

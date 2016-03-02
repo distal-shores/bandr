@@ -22,6 +22,7 @@
 
     <% if current_user %>
       <%= render 'layouts/sidebar' %>
+      <%= render 'layouts/messagebar' %>
     <% end %>
 
     <%= yield %>
@@ -33,9 +34,24 @@
   <script src="//cdn.jsdelivr.net/jquery.sidr/2.2.1/jquery.sidr.min.js"></script>
 
   <script>
-    $(document).ready(function() {
-    $('#simple-menu').sidr({side: 'right'});
-  });
+  //   $(document).ready(function() {
+  //   $('#simple-menu').sidr({side: 'right'});
+  // });
+
+  //   $(document).ready(function() {
+  //   $('#msg-menu').sidr({side: 'left'});
+  // });
+
+$(document).ready(function() {
+    $('#other-menu').sidr({
+      name: 'msg_sidr',
+      side: 'left'
+    });
+    $('#simple-menu').sidr({
+      name: 'sidr',
+      side: 'right'
+    });
+});
 
     
   </script>
