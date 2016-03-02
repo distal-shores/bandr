@@ -17,7 +17,7 @@
   </p>
   <p class="navbar-item is-text-centered">
     <% if current_user %>
-      <a class="link is-info" href="#"><%= current_user.full_name %></a>
+    <%= link_to "#{current_user.full_name}", user_path(session[:user_id]), class: "link is-info" %>
     <% else %>
       <%= link_to "Login", new_session_path, class: "link is-info" %>
     <% end %>

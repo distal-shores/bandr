@@ -8,12 +8,19 @@
   
   <div class="sidr-header">My Messages</div>
 
+  <div class="sidr-secondary-header">Recent Messages</div>
   <ul>
-  <% @messages = Message.all.where('recipient_id = ?', current_user.id.to_s) %>
-  <% @messages.each do |message| %>
+  <% @received_messages = Message.all.where('recipient_id = ?', current_user.id.to_s) %>
+  <% @received_messages.each do |message| %>
     <li><%= message.subject %></li>
     <% end %>
-
+  </ul>
+    <div class="sidr-secondary-header">Sent Messages</div>
+  <ul>
+  <% @sent_messages = Message.all.where('sender_id = ?', current_user.id.to_s) %>
+  <% @sent_messages.each do |message| %>
+    <li><%= message.subject %></li>
+    <% end %>
   </ul>
 
 </div>

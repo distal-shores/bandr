@@ -27,8 +27,8 @@ a.link.is-info {
 }
 
 a.link.is-info:hover {
-  color: $peach;
-  border: 1px solid $peach;
+  color: #de0052;
+  border: 1px solid #de0052;
   animation-name: border;
   animation-duration: 0.5s;
   animation-name: link-color;
@@ -37,12 +37,12 @@ a.link.is-info:hover {
 
 @keyframes link-color {
     from {color: white;}
-    to {color: $peach;}
+    to {color: #de0052;}
 }
 
 @keyframes border {
     from {border: none;}
-    to {border: 1px solid $peach;}
+    to {border: 1px solid #de0052;}
 }
 
 .navbar img {
