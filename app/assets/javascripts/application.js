@@ -45,8 +45,6 @@ $(function () {
     navigationPosition: 'right',
     navigationTooltips: ['firstSlide', 'secondSlide'],
     showActiveTooltip: false,
-    slidesNavigation: true,
-    slidesNavPosition: 'bottom',
 
     //Scrolling
     css3: true,
@@ -75,12 +73,12 @@ $(function () {
     controlArrows: true,
     verticalCentered: true,
     resize : false,
-    sectionsColor : ['#ccc', '#fff'],
+    sectionsColor : ['#3E07B4', '#fff'],
     paddingTop: '3em',
     paddingBottom: '10px',
     fixedElements: '#header, .footer',
-    responsiveWidth: 0,
-    responsiveHeight: 0,
+    responsiveWidth: 1,
+    responsiveHeight: 1,
 
     //Custom selectors
     sectionSelector: '.section',

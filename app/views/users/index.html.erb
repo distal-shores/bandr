@@ -15,11 +15,13 @@
   <% @user1 = @random_users[0] %>
   <% @user2 = @random_users[1] %>
   <% @user3 = @random_users[2] %>
+<% else %>
+  <% @no_user = 1 %>
 <% end %>
 
 
 
-
+<% if @random_users %>
 <div id="fullpage">
   <div class="section">
     <% if @user1 %>
@@ -39,3 +41,11 @@
     <% end %>
   </div>
 </div>
+<% end %>
+<% if @no_user %>
+      <div class="slide">
+        <div class="columns">
+          <div class="no-users column is-half is-offset-quarter is-fullheight">No users found<div>
+        </div>
+      </div>
+    <% end %>
