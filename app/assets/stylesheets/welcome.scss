@@ -52,6 +52,12 @@
   color: white;
   -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color: #333;
+  transition: margin-bottom 4s linear;
+
+}
+
+.flex-item h1.move_up {
+  margin-bottom:15px;
 }
 
 .sidr {
