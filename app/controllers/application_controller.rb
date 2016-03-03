@@ -3,10 +3,16 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_filter :get_all_users
+  before_filter :get_all_connections
 
   def get_all_users
     @users = User.all
   end
+
+  def get_all_connections
+    @connections = Connection.all
+  end
+
 
   protected
 
