@@ -9,7 +9,7 @@
   <link href='https://fonts.googleapis.com/css?family=Yellowtail|Damion' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Viga' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Comfortaa:700' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Lekton' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lekton:400,700' rel='stylesheet' type='text/css'>
   <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
   <script type="text/javascript" src="https://stratus.soundcloud.com/stratus.js"></script>
   <link rel="stylesheet" type="text/css" src="assets/jquery.fullPage.css" />
@@ -23,15 +23,17 @@
   <div id="wrapper">
     <%= render 'layouts/navbar' %>
 
-    <% if current_user %>
-      <%= render 'layouts/sidebar' %>
-      <%= render 'layouts/messagebar' %>
-    <% end %>
+    <main>
 
-    <%= yield %>
+      <% if current_user %>
+        <%= render 'layouts/sidebar' %>
+        <%= render 'layouts/messagebar' %>
+      <% end %>
 
-  </div>
+      <%= yield %>
 
+    </main>
+    </div>
   <script src="//cdn.jsdelivr.net/jquery.sidr/2.2.1/jquery.sidr.min.js"></script>
 
   <script>

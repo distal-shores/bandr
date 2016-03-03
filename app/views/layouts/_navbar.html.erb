@@ -1,11 +1,11 @@
 <nav class="navbar">
   <p class="navbar-item is-text-centered">
-    <img src = "/assets/search.png" alt="" style="height: 18px;">
+    <img src = "/assets/search.png" alt="">
   </p>
   <p class="navbar-item is-text-centered">
-    <img src = "/assets/waves.png" alt="" style="height: 18px;">
+    <%= link_to image_tag("/assets/waves.png"), users_path, class: "link is-info" %>
   </p>
-  <p class="navbar-item is-text-centered">
+  <p class="navbar-item is-text-centered logo">
     <%= link_to image_tag("/assets/logo.png"), root_path %>
   </p>
   <p class="navbar-item is-text-centered">
