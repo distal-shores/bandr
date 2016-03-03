@@ -53,6 +53,18 @@ class User < ActiveRecord::Base
     eval 'messages.count(:conditions => ["recipient_id = ? AND read_at IS NULL", self.user_id)'
   end
 
+  def assign_icons
+    if self.interests[2][:name] == 'keyboard'
+      return '/assets/keyboard.png'
+    elsif self.interests[2][:name] == 'vocals'
+      return '/assets/microphone.png'
+    elsif self.interests[2][:name] == 'synthesizer'
+      return '/assets/synthesizer.png'
+    else
+      return '/assets/volume-off.png'
+    end
+  end
+
   # def connections
   #   active_connections | passive_connections
   # end

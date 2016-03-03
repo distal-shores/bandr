@@ -2,8 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.card {
-  margin-top: 0px;
+#users-container {
+  
 }
 
 .fa-check-circle {
@@ -24,3 +24,112 @@
   text-align: center;
   padding-left: 45px;
 }
+
+.profile-pic {
+  border: 2px solid grey;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  height: 128px;
+  width: 128px;
+}
+
+#flex-container {
+  display: -webkit-box;
+  display: -moz-box;         
+  display: -webkit-flex;    
+  display: flex;             
+  flex-direction: column;
+  position: fixed;
+  top: 25%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  z-index: 3;
+}
+
+.user-header {
+  text-align: center;
+  font-family: Lekton, serif;
+  font-weight: 700;
+  color: white;
+  font-size: 2.3em;
+  -webkit-text-stroke-width: 1.0px;
+  -webkit-text-stroke-color: #333;
+}
+
+.user-header-2 {
+  font-family: Viga, sans-serif;
+  color: white;
+  font-size: 2.3em;
+  -webkit-text-stroke-width: 1.0px;
+  -webkit-text-stroke-color: #333;
+}
+
+.instr-icon {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  -webkit-filter: invert(100%);
+  width: 58px;
+  height: auto;
+  padding: 10px;
+}
+
+.user-city {
+  font-size: 1.5em;
+  text-align: center;
+  font-family: Lekton, serif;
+  font-weight: 400;
+  color: white;
+
+}
+
+#user-left-pane {
+
+  border-radius:18px;
+  border:3px solid gray;
+  border-radius: 6px;
+  padding: 40px 20px 20px 20px;
+  background-color: rgba(131, 92, 255, 0.5);
+  height: 100%;
+
+}
+
+#user-right-pane {
+
+  border-radius:18px;
+  border:3px solid gray;
+  border-radius: 6px;
+  height: 100%;
+  background-color: rgba(131, 92, 255, 0.95);
+  margin-left: 20px;
+  color: black;
+
+}
+
+.user-description {
+  font-family: Lekton, serif;
+  font-weight: 400;
+  font-size: 1.3em;
+}
+
+#user-container {
+  
+  height: 400px;
+}
+
+#genres {
+  text-align: center;
+  color: white;
+  font-size: 1.5em;
+  font-family: Lekton, serif;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+
+

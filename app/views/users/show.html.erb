@@ -1,8 +1,4 @@
-<div class=container>
-<h2></h2>
-</div>
-
-<div class="columns">
+<!-- <div class="columns">
   <div class="card column is-half is-offset-quarter is-fullheight">
     <div class="media">
       <div class="media-content">
@@ -10,7 +6,7 @@
       </div>
     </div>
     <figure class="card-image is-4x3">
-      <img src="http://placehold.it/300x225" alt="">
+      <img src="http://www.celebdirtylaundry.com/wp-content/uploads/Lemmy-Kilmister.jpg" alt="">
     </figure>
     <div class="card-content">
       <div class="columns">
@@ -29,8 +25,52 @@
         <%= @user.description %>
     </div>
   </div>
-</div>
+</div> -->
+<% img_url = @user.pic %>
 
+<img src="/assets/user_splash.jpeg" class="bgimg" />
+
+<div id="flex-container">
+
+  <div class="columns" id="user-container">
+
+    <div class="column is-3 is-offset-2" id="user-left-pane">
+
+    <%= image_tag(img_url, class: 'profile-pic') %>
+    <h1 class="user-header">
+      <%= @user.full_name %>
+    <h2 class="user-city">
+      <%= @user.city %>
+    </h2>
+    <h2 class="user-city">
+      <% instrument = @user.interests.where(kind: 'instrument').first.try(:name) %>
+      <%= instrument.capitalize.pluralize %>
+    </h2>
+    </h1>
+    <%= image_tag(@user.assign_icons, class: 'instr-icon') %>
+
+    </div>
+
+    <div class="column is-5" id="user-right-pane">
+    <h1 class="user-header-2">
+      About <%= @user.first_name %>
+    </h1>
+  
+      <p class="user-description">
+        <%= @user.description %>
+      </p>
+    
+       <div id="genres">
+    <% genre = @user.interests.where(kind: 'genre').first.try(:name) %>
+     <% subgenre = @user.interests.where(kind: 'subgenre').first.try(:name) %>
+     <%= genre.capitalize %> | <%= subgenre.capitalize %>
+    </div>
+
+    </div>
+
+  </div>
+
+</div>
 <% demo_string = @user.demo%>
 
 <script type='text/javascript'>
@@ -38,7 +78,7 @@
     var demo = '<%= demo_string %>'
     $(document).ready(function(){
       $('body').stratus({
-        auto_play: true,
+        auto_play: false,
         download: false,
         links: demo,
         random: false,
