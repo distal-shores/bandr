@@ -5,9 +5,11 @@
         <h1 class="title is-10 is-text-centered"><%= link_to user.full_name, user_path(user.id) %></h1>
       </div>
     </div>
+    <% img_url = user.pic %>
+
     <figure class="card-image is-4x3">
-      <img src="http://placehold.it/300x225" alt="">
-    </figure>
+    <%= image_tag(img_url) %>
+</figure>
       <div class="columns">
         
       </div>
