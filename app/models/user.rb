@@ -60,6 +60,10 @@ class User < ActiveRecord::Base
       return '/assets/microphone.png'
     elsif self.interests[2][:name] == 'synthesizer'
       return '/assets/synthesizer.png'
+    elsif self.interests[2][:name] == 'drums'
+      return '/assets/drum-set.png'
+    elsif self.interests[2][:name] == 'guitar' || 'electric guitar'
+      return '/assets/acoustic-guitar.png'  
     else
       return '/assets/volume-off.png'
     end
