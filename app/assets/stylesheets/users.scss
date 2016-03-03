@@ -6,14 +6,57 @@
   margin-top: 0px;
 }
 
+div#interests.card {
+  // width: 10%;
+  text-align: center;
+}
+
+h1.user-interests {
+  padding-top: 5px;
+}
+
+div#interests p.user-interests-para {
+  color: #2C2C2C;
+  font-family: Viga, sans-serif;
+}
+
+
+.title.is-10.is-text-centered {
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
 .fa-check-circle {
-  margin-left: 3%;
-  margin-top: 5%;
-  color: #42B545;
+  color: #51B954;
+  transition: all 0.5s ease-out;
   font-size: 8em;
 }
 
+.fa-check-circle:hover {
+  color: #00BF05;
+  transform: scale(1.1, 1.1);
+}
+
 .fa.fa-check-circle.fa-8x {
+  font-size: 8em;
+  height: 0%;
+}
+
+.fa-times-circle {
+  margin-left: 8%;
+  margin-top: 80px;
+  color: #B92E37;
+  transition: all 0.5s ease-out;
+  font-size: 8em;
+  position: fixed;
+}
+
+.fa-times-circle:hover {
+  color: #C70410;
+  transform: scale(1.1, 1.1);
+  margin-top: 75px;
+}
+
+.fa.fa-times-circle.fa-8x {
   font-size: 8em;
   height: 0%;
 }

@@ -1,0 +1,30 @@
+<!-- <%= link_to "", users_path, class: "fa fa-times-circle fa-8x" %>  -->
+<div class="columns">
+  <div class="card user-find column is-4 is-offset-3">
+    <div class="media">
+      <div class="media-content">
+        <h1 class="title is-10 is-text-centered"><%= link_to user.full_name, user_path(user.id) %></h1>
+      </div>
+    </div>
+    <figure class="card-image is-4x3">
+      <img src="http://placehold.it/300x225" alt="">
+    </figure>
+      <div class="columns">
+        
+      </div>
+      <div class="content user-description is-text-centered">
+        <%= user.description %>
+    </div>
+  </div>
+  <div id="interests" class="card column is-2">
+    <h1 class="user-interests title is-4">Instrument </h1>
+    <br/>
+    <p class="user-interests-para"><%= user.interests.where(kind: 'instrument').first.try(:name) %></p>
+    <hr>
+    <%= link_to "", connections_path(:friend_id => user), :method => :post, class: "fa fa-check-circle fa-8x" %> 
+    <hr>
+    <h1 class="user-interests title is-4">Genres</h1>
+    <p class="user-interests-para"><%= user.interests.where(kind: 'genre').first.try(:name) %></p>
+    <p class="user-interests-para"><%= user.interests.where(kind: 'subgenre').first.try(:name) %></p>
+  </div>
+</div>

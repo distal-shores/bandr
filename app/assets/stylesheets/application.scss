@@ -97,7 +97,7 @@ body {
 }
 
 .sidr ul li {
-  $sidr-font-family: 'Vida', sans-serif;
+  $sidr-font-family: 'Viga', sans-serif;
 }
 
 
@@ -213,4 +213,28 @@ opacity: 0.65;
   position: fixed;
   bottom: 0;
   left: 3.5%;
+}
+
+div.fp-controlArrow.fp-prev {
+  left: 135px;
+  border-color: transparent rgba(255, 255, 255, 0.25) transparent transparent;
+      transition: all 0.25s cubic-bezier(0.64, 0, 0.39, 0.99);
+}
+
+div.fp-controlArrow.fp-prev:hover {
+    // border-width: 42.5px 38px 42.5px 0;
+    transform: scale3D(1.1, 1.1, 1.1);
+    border-color: transparent rgba(255, 255, 255, 1) transparent transparent;
+  }
+
+div.fp-controlArrow.fp-next {
+  right: 135px;
+  border-color: transparent transparent transparent rgba(255, 255, 255, 0.25);
+  transition: all 0.25s cubic-bezier(0.64, 0, 0.39, 0.99);
+}
+
+div.fp-controlArrow.fp-next:hover {
+    // border-width: 42.5px 38px 42.5px 0;
+    transform: scale3D(1.1, 1.1, 1.1);
+    border-color: transparent transparent transparent rgba(255, 255, 255, 1);
 }
