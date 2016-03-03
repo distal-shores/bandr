@@ -18,7 +18,7 @@ class ConnectionsController < ApplicationController
     if flag == true
       redirect_to users_path
     else
-      flash[:notice] = 'Fuck you.'
+      flash[:notice] = 'unable to save connection'
       redirect_to users_path
     end
   end

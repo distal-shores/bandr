@@ -8,14 +8,30 @@
   
   <div class="sidr-header">My Connections</div>
 
+  <div class="sidr-secondary-header">Connected Contacts</div>
   <ul>
-    
     <% friend_array = [] %>
-    <% current_user.connections.each do |connection| %>
+    <% current_user.connections.where(status: "accepted").each do |connection| %>
       <% friend_array.push(connection.friend_id) %>
     <% end %>
       
     <% friend_array.each do |friend| %>
+      <% @user = User.find(friend) %>
+      <li>
+        <%= link_to "#{@user.full_name}", user_path(@user.id) %>
+      </li>
+    <%end%>
+  
+  </ul>
+
+  <div class="sidr-secondary-header">Pending Contacts</div>
+  <ul>
+    <% pending_friend_array = [] %>
+    <% current_user.connections.where(status: "pending").each do |connection| %>
+      <% pending_friend_array.push(connection.friend_id) %>
+    <% end %>
+      
+    <% pending_friend_array.each do |friend| %>
       <% @user = User.find(friend) %>
       <li>
         <%= link_to "#{@user.full_name}", user_path(@user.id) %>
