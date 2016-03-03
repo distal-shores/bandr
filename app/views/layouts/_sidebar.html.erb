@@ -24,7 +24,7 @@
   
   </ul>
 
-  <div class="sidr-secondary-header">Pending Contacts</div>
+  <div class="sidr-secondary-header">Sent Requests</div>
   <ul>
     <% pending_friend_array = [] %>
     <% current_user.connections.where(status: "pending").each do |connection| %>
@@ -40,4 +40,23 @@
   
   </ul>
 
+
+  <div class="sidr-secondary-header">Incoming Requests</div>
+  <ul>
+    <% incoming_friend_array = [] %>
+    <% @connections.where(status: "pending", friend_id: current_user.id).each do |connection| %>
+      <% incoming_friend_array.push(connection.user_id) %>
+    <% end %>
+      
+    <% incoming_friend_array.each do |friend| %>
+      <% @user = User.find(friend) %>
+      <% @current_connection = @user.connections.where(friend_id: current_user.id, user_id: @user.id, status: "pending") %>
+      <li>
+        <%= link_to "#{@user.full_name}", user_path(@user.id) %> 
+        <%= link_to "Accept", connection_path(@user.id), :method => :patch %>
+        <%= link_to "Decline", connection_path(@current_connection.first), :method => :delete %>
+      </li>
+    <%end%>
+  
+  </ul>
 </div>
