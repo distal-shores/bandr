@@ -20,32 +20,39 @@
 <% end %>
 
 
-
-<% if @random_users %>
 <div id="fullpage">
-  <div class="section">
-    <% if @user1 %>
-      <div class="slide">
-        <%= render 'user_page', user: @user1 %>
+  <% if @random_users %>
+    <div class="section">
+    <% if notice %>
+      <div class="notification is-success notice">
+        <%= notice %>
       </div>
     <% end %>
-    <% if @user2 %>
-      <div class="slide">
-        <%= render 'user_page', user: @user2 %>
-      </div>
-    <% end %>
-    <% if @user3 %>
-      <div class="slide">
-        <%= render 'user_page', user: @user3 %>
-      </div>
+      <% if @user1 %>
+        <div class="slide">
+          <%= render 'user_page', user: @user1 %>
+        </div>
+      <% end %>
+      <% if @user2 %>
+        <div class="slide">
+          <%= render 'user_page', user: @user2 %>
+        </div>
+      <% end %>
+      <% if @user3 %>
+        <div class="slide">
+          <%= render 'user_page', user: @user3 %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
-<% end %>
+
 <% if @no_user %>
-      <div class="slide">
-        <div class="columns">
-          <div class="no-users column is-half is-offset-quarter is-fullheight">No users found<div>
-        </div>
+  <div class="slide">
+    <div class="columns">
+      <div class="no-users">
+        No users found
       </div>
-    <% end %>
+    </div>
+  </div>
+<% end %>

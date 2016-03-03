@@ -6,6 +6,17 @@
   
 }
 
+div.section div.notice {
+  text-align: center;
+  margin-top: 41px;
+  margin-bottom: -5%;
+  max-width: 50%;
+  margin-left: 25%;
+  background: #51B954;
+  padding: 6px;
+  color: white;
+}
+
 div#interests.card {
   // width: 10%;
   text-align: center;
@@ -63,9 +74,12 @@ div#interests p.user-interests-para {
 
 .no-users {
   font-size: 8em;
+  min-width: 100%;
+  margin-left: 51%;
   margin-top: 120px;
   text-align: center;
-  padding-left: 45px;
+  color: #fff;
+
 }
 
 .profile-pic {
@@ -173,6 +187,3 @@ div#interests p.user-interests-para {
   font-weight: 700;
   margin-top: 20px;
 }
-
-
-
